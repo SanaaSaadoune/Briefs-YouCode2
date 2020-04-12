@@ -1,0 +1,315 @@
+@import "Reclamation.scss";
+@import "variable.scss";
+@import "information.scss";
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    box-sizing: border-box;
+}
+/*header*/
+/*Menu*/
+header{
+    #check{
+        display: none;
+    }
+    .checkbtn{
+    position: relative;
+    left: -210px;
+    font-size: 30px;
+    color:white;
+    cursor: pointer;
+    display: none;
+    top:120px;
+    }
+    .Menu-link2{
+        top: 97px;
+        position: absolute;
+        left:-70px;
+        z-index: 1;
+        display: none;}
+    nav{
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #000000;
+        color: #FFF;
+        position: fixed;
+        width: 100%;
+        height: 80px;
+        .Logo{
+            height: 60px;
+            margin-left: 20px;
+        }
+        ul{
+            display: flex;
+            li{
+                a{
+                    text-decoration: none;
+                    color: #FFF;
+                    &:hover{
+                        text-decoration: none;
+                        color: #D5AC63;
+                        cursor: pointer;
+                    }
+                }
+                list-style-type: none;
+                padding: 40px;
+                font-family: Segoe UI;
+                font-weight: bold;
+                font-style: italic;
+                
+                &:hover{
+                    color: #D5AC63;
+                    cursor: pointer;
+                }
+                
+            }
+        }
+        .deconnecter{
+            margin: 40px;
+        }
+    }
+    .Titre{
+        background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url(../img/question/1.png);
+        height: 550px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding-top: 130px;
+        padding-left: 50px;
+        div{
+            h1{
+                font-family: Agency Fb;
+                font-size: 72px;
+                font-weight: bold;
+                color: #FFFFFF;
+                span{
+                    color: #D5AC63;
+                }
+            }
+        }
+        button{
+            font-family: Segoe UI;
+              background-color:#D5AC63;
+                font-style: italic;
+                border: none;
+                padding: 10px;
+                border-radius: 100px;
+                width: 141px;
+                font-size: 20px;
+                outline: none;
+                &:hover{
+                    cursor: pointer;
+                }
+        }
+    }
+}
+.active{
+    color: #D5AC63;
+}
+/*question*/
+.Question{
+    h2{
+        text-align: center;
+        font-family: Segoe UI;
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    .border2{
+    width: 160px;
+    height: 2px;
+    background-color: #D5AC63;
+    margin: 20px auto;
+    }
+    .container{
+        .frm{
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 30px;
+            label{
+                font-family: Segoe UI;
+                font-weight: bold;
+                font-style: italic;
+            }
+            button {
+                font-family: Segoe UI;
+                background-color:#D5AC63;
+                font-style: italic;
+                border: none;
+                padding: 10px;
+                border-radius: 100px;
+                width: 141px;
+                font-size: 20px;
+                outline: none;
+                display: block;
+                margin: 0 auto;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+.Contact{
+    margin-top: 100px;
+    h2{
+        text-align: center;
+        font-family: Segoe UI;
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    .border2{
+    width: 160px;
+    height: 2px;
+    background-color: #D5AC63;
+    margin: 20px auto;
+    }
+    .map{
+        width: 60%;
+        display: block;
+        margin: auto;
+    }
+}
+/*about*/
+@import "about.scss";
+/*footer*/
+footer{
+    background-color: #000000;
+    color: #FFFFFF;
+    margin-top: 200px;
+    .ftr{
+       
+        ul{
+           color:#D5AC63;
+           font-family: Segoe UI;
+            align-items: center;
+            justify-content: center;
+            li{
+                list-style-type: none;
+                padding: 7px;
+                text-align: center;
+            }
+            i{
+                color: #909090;
+                font-size: 2em;
+            }
+        }
+    }
+}
+/*media query*/
+@media screen and (max-width:830px){   
+    header{
+        .checkbtn{
+            position: relative;
+            left: 10px;
+            font-size: 30px;
+            color:#D5AC63;
+            cursor: pointer;
+            display: block;
+            top: 0px;
+            z-index: 2;
+        }
+        #check:checked ~ .Menu-link2{
+            display: block;
+        }
+        .Menu-link2{
+            top: 80px;
+            position: absolute;
+            left:-70px;
+            z-index: 1;
+            a{
+                display: block;
+                background-color: black;
+                width:100% + 200%;
+                height: 60px;
+                text-align: center;
+                color: #FFF;
+                text-decoration: none;
+                &:hover{
+                    color: #D5AC63;
+                    cursor: pointer;
+                }
+                
+        
+            }
+        }
+        nav{
+           
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000000;
+            color: #FFF;
+            position: fixed;
+            width: 100%;
+            height: 80px;
+            .Logo{
+                height: 60px;
+                margin-left: 20px;
+            }
+            ul{
+                display: none;
+                li{
+                    list-style-type: none;
+                    padding: 40px;
+                    font-family: Segoe UI;
+                    font-weight: bold;
+                    font-style: italic;
+                    
+                    &:hover{
+                        color: #D5AC63;
+                        cursor: pointer;
+                    }
+                    
+                }
+            }
+
+
+
+}
+    }
+    .Titre{
+        background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url(../img/question/1.png);
+        height: 550px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding-top: 173px !important;
+        padding-left: 50px;
+        // text-align: center;
+        margin: auto;
+        div{
+            h1{
+                font-family: Agency Fb;
+                font-size: 50px !important;
+                font-weight: bold;
+                color: #FFFFFF;
+               
+                span{
+                    color: #D5AC63;
+                }
+            }
+        }
+        button{
+            font-family: Segoe UI;
+              background-color:#D5AC63;
+                font-style: italic;
+                border: none;
+                padding: 10px;
+                border-radius: 100px;
+                width: 141px;
+                font-size: 20px;
+                outline: none;
+                &:hover{
+                    cursor: pointer;
+                }
+        }
+    }
+    
+ 
+}

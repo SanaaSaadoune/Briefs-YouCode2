@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  box-sizing: border-box; }
+
+.Reclamation h2 {
+  text-align: center;
+  font-family: Segoe UI;
+  font-weight: bold;
+  font-style: italic; }
+.Reclamation .border2 {
+  width: 160px;
+  height: 2px;
+  background-color: #D5AC63;
+  margin: 20px auto; }
+.Reclamation .select-service {
+  text-align: center; }
+  .Reclamation .select-service label {
+    font-family: Segoe UI;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 20px; }
+  .Reclamation .select-service select {
+    border: 1px solid black;
+    border-radius: 0px;
+    /* width: 380px; */
+    width: 30%; }
+    .Reclamation .select-service select option {
+      font-family: Segoe UI;
+      font-weight: bold;
+      font-style: italic; }
+  .Reclamation .select-service button {
+    font-family: Segoe UI;
+    background-color: #D5AC63;
+    font-style: italic;
+    border: none;
+    padding: 5px;
+    border-radius: 100px;
+    width: 141px;
+    font-size: 20px;
+    outline: none; }
+.Reclamation .reclamation-info {
+  overflow-x: auto;
+  margin-top: 40px; }
+
+table thead tr {
+  background-color: #D5AC63; }
+  table thead tr th {
+    text-align: center;
+    font-family: Segoe UI;
+    font-weight: bold;
+    font-style: italic; }
+
+/*# sourceMappingURL=Reclamation.css.map */

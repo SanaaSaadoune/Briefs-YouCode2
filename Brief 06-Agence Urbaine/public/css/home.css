@@ -1,0 +1,748 @@
+header #check {
+  display: none;
+}
+
+header .checkbtn {
+  position: relative;
+  left: -210px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  display: none;
+  top: 120px;
+}
+
+header .Menu-link2 {
+  top: 97px;
+  position: absolute;
+  left: -70px;
+  z-index: 1;
+  display: none;
+}
+
+header nav {
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #000000;
+  color: #FFF;
+  position: fixed;
+  width: 100%;
+  height: 80px;
+}
+
+header nav .Logo {
+  height: 60px;
+  margin-left: 20px;
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  margin: auto;
+  margin-top: -10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+header nav ul li {
+  list-style-type: none;
+  padding: 40px;
+  font-family: Segoe UI;
+  font-weight: bold;
+  font-style: italic;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+header nav ul li a:hover {
+  text-decoration: none;
+  color: #D5AC63;
+  cursor: pointer;
+}
+
+header nav ul li:hover {
+  color: #D5AC63;
+  cursor: pointer;
+}
+header button{
+  font-family: Segoe UI;
+    background-color: #D5AC63;
+    font-style: italic;
+    border: none;
+    padding: 5px;
+    border-radius: 100px;
+    width: 141px;
+    font-size: 20px;
+    outline: none;
+    margin:5px;
+}
+header .Titre {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(../img/Images/1.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/Images/1.jpg);
+  height: 550px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 130px;
+  padding-left: 50px;
+}
+
+header .Titre div h1 {
+  font-family: Agency Fb;
+  font-size: 72px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+header .Titre div h1 span {
+  color: #D5AC63;
+  font-family: Agency Fb;
+}
+
+header .Titre button {
+  font-family: Segoe UI;
+  background-color: #D5AC63;
+  font-style: italic;
+  border: none;
+  padding: 10px;
+  border-radius: 100px;
+  width: 241px;
+  font-size: 20px;
+  outline: none;
+  margin-top: 40px;
+}
+
+header .Titre button:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px) {
+  header .checkbtn {
+    position: relative;
+    left: 10px;
+    font-size: 30px;
+    color: #D5AC63;
+    cursor: pointer;
+    display: block;
+    top: 0px;
+    z-index: 2;
+  }
+  header #check:checked ~ .Menu-link2 {
+    display: block;
+  }
+  header .Menu-link2 {
+    top: 80px;
+    position: absolute;
+    left: -70px;
+    z-index: 1;
+  }
+  header .Menu-link2 a {
+    display: block;
+    background-color: black;
+    width: 300%;
+    height: 60px;
+    text-align: center;
+    color: #FFF;
+    text-decoration: none;
+  }
+  header .Menu-link2 a:hover {
+    color: #D5AC63;
+    cursor: pointer;
+  }
+  header nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #000000;
+    color: #FFF;
+    position: fixed;
+    width: 100%;
+    height: 80px;
+  }
+  header nav .Logo {
+    height: 60px;
+    margin-left: 20px;
+  }
+  header nav ul {
+    display: none;
+  }
+  header nav ul li {
+    list-style-type: none;
+    padding: 40px;
+    font-family: Segoe UI;
+    font-weight: bold;
+    font-style: italic;
+  }
+  header nav ul li:hover {
+    color: #D5AC63;
+    cursor: pointer;
+  }
+  .Titre {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(../img/question/1.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/question/1.png);
+    height: 550px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 173px !important;
+    padding-left: 50px;
+    margin: auto;
+  }
+  .Titre div h1 {
+    font-family: Agency Fb;
+    font-size: 50px !important;
+    font-weight: bold;
+    color: #FFFFFF;
+  }
+  .Titre div h1 span {
+    color: #D5AC63;
+  }
+  .Titre button {
+    font-family: Segoe UI;
+    background-color: #D5AC63;
+    font-style: italic;
+    border: none;
+    padding: 10px;
+    border-radius: 100px;
+    width: 141px;
+    font-size: 20px;
+    outline: none;
+  }
+  .Titre button:hover {
+    cursor: pointer;
+  }
+}
+
+
+#inscription {
+  display: none;
+  position: absolute;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#inscription #f1 {
+  width: 450px;
+  margin: auto;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+#inscription #f1 p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 35px;
+  letter-spacing: 1px;
+}
+
+#inscription #f1 hr {
+  width: 160px;
+  margin: auto;
+  background-color: #D5AC63;
+  height: 3px;
+  border: none;
+  margin-top: 5px;
+  margin-bottom: 40px;
+}
+
+#inscription #f1 div {
+  width: 400px;
+  margin: auto;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 20px;
+}
+
+#inscription #f1 div input {
+  font-size: 17px;
+  padding-left: 6px;
+  height: 35px;
+  border: none;
+  border-radius: 8px;
+  background-color: #E8EFF6;
+}
+
+#inscription #f1 .BtnInscription {
+  width: 400px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+#inscription #f1 .BtnInscription input {
+  background-color: #D5AC63;
+  color: white;
+  cursor: pointer;
+  height: 35px;
+  width: 130px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  border-radius: 20px;
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+}
+
+#inscription #f1 .BtnInscription input:hover {
+  background-color: rgba(117, 117, 117, 0.8);
+}
+
+#inscription #f1 div p {
+  margin-top: 10px;
+  width: 100%;
+  font-weight: 1;
+  font-size: 14px;
+  text-align: center;
+}
+
+#connexion {
+  display: none;
+  position: absolute;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#connexion #f2 {
+  width: 440px;
+  margin: auto;
+  margin-top: 100px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+#connexion #f2 .imageLog {
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  margin-top: -100px;
+  margin-bottom: 10px;
+}
+
+#connexion #f2 p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 35px;
+  letter-spacing: 1px;
+}
+
+#connexion #f2 .lien {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#connexion #f2 .lien a {
+  color: blue;
+  font-weight: normal;
+  font-size: 15px;
+  letter-spacing: 0px;
+}
+
+#connexion #f2 hr {
+  width: 160px;
+  margin: auto;
+  background-color: #D5AC63;
+  height: 3px;
+  border: none;
+  margin-top: 5px;
+  margin-bottom: 40px;
+}
+
+#connexion #f2 div {
+  width: 380px;
+  margin: auto;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 22px;
+  color: #C0C0C0;
+}
+
+#connexion #f2 div input {
+  font-size: 17px;
+  height: 35px;
+  border: none;
+  border-bottom: 1px solid #C0C0C0;
+  margin-top: 40px;
+}
+
+#connexion #f2 div #emailLog {
+  margin-top: 20px;
+}
+
+#connexion #f2 .show {
+  margin-top: 20px;
+  margin-left: 20px;
+  height: 15px;
+  width: 15px;
+}
+
+#connexion #f2 .BtnConnexion {
+  width: 400px;
+  margin: auto;
+}
+
+#connexion #f2 .BtnConnexion input {
+  background-color: #D5AC63;
+  color: white;
+  cursor: pointer;
+  height: 35px;
+  width: 130px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  border-radius: 20px;
+  width: 80%;
+  margin: auto;
+  height: 40px;
+  font-size: 20px;
+  margin-top: 40px;
+}
+
+#connexion #f2 .BtnConnexion input:hover {
+  background-color: rgba(117, 117, 117, 0.8);
+}
+
+footer {
+  background-color: #000000;
+  color: #FFFFFF;
+  margin-top: 200px;
+}
+
+footer .ftr ul {
+  color: #D5AC63;
+  font-family: Segoe UI;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer .ftr ul li {
+  list-style-type: none;
+  padding: 7px;
+  text-align: center;
+}
+
+footer .ftr ul i {
+  color: #909090;
+  font-size: 2em;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Segoe UI;
+}
+
+.espace {
+  height: 60px;
+}
+
+section h1 {
+  text-align: center;
+  font-size: 35px;
+}
+
+section hr {
+  width: 280px;
+  margin: auto;
+  margin-top: 10px;
+  font-size: 60px;
+  height: 2px;
+  background-color: #D5AC63;
+}
+
+section .Part1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  margin: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section .Part1 img {
+  width: 48%;
+}
+
+section .Part1 p {
+  width: 48%;
+  font-style: italic;
+  line-height: 54px;
+  text-align: center;
+}
+
+section .hr2 {
+  width: 150px;
+}
+
+section .Part2 {
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  margin: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section .Part2 img {
+  width: 50%;
+}
+
+section .Part2 div {
+  width: 50%;
+  font-style: italic;
+  line-height: 40px;
+  color: black;
+  border-left: 1px solid black;
+}
+
+section .Part2 div h2 {
+  color: #D5AC63;
+  text-align: center;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #D5AC63;
+          text-decoration-color: #D5AC63;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+section .Part2 div ul {
+  padding-left: 30px;
+}
+
+section .Part3 div {
+  background-color: #D5AC63;
+  color: black;
+  border-left: none;
+  border-right: 1px solid black;
+}
+
+section .Part3 div h2 {
+  color: white;
+  -webkit-text-decoration-color: white;
+          text-decoration-color: white;
+}
+
+section .Services {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60%;
+  margin: auto;
+}
+
+section .Services .parag1 {
+  width: 330px;
+  text-align: center;
+  font-style: italic;
+}
+
+section .Services .parag1 h2 {
+  color: #D5AC63;
+}
+
+section .Services .serv1 {
+  width: 20%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section .Services .serv1 .trait {
+  height: 100px;
+  border-right: 1px solid black;
+}
+
+section .main-slider {
+  width: 60%;
+  height: 70vh;
+  margin: 0 auto;
+  position: relative;
+  color: white;
+  font-size: 2em;
+}
+
+section .main-slider img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 1px solid black;
+}
+
+section .main-slider .nav-icon {
+  position: absolute;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  z-index: 4;
+  color: black;
+}
+
+section .main-slider .nav-icon i {
+  cursor: pointer;
+}
+
+section .img-info {
+  color: black;
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  font-style: italic;
+}
+
+.Contact hr {
+  width: 80px;
+}
+
+.Contact .map {
+  width: 60%;
+  display: block;
+  margin: auto;
+}
+
+.Contact ul {
+  width: 60%;
+  margin: auto;
+  margin-top: 10px;
+  font-size: 17px;
+  letter-spacing: 2px;
+}
+
+@media only screen and (max-width: 1200px) {
+  section .Part1 {
+    width: 90%;
+    margin: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  section .Part1 p {
+    width: 100%;
+    line-height: 40px;
+  }
+  section .Part1 img {
+    width: 100%;
+  }
+  section .Part2 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 90%;
+    margin: auto;
+  }
+  section .Part2 div {
+    width: 100%;
+  }
+  section .Part2 img {
+    width: 100%;
+  }
+  section .Services {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+  }
+  section .Services .parag1 {
+    width: 39%;
+    font-size: 15px;
+  }
+  section .Services .parag1 h2 {
+    font-size: 20px;
+  }
+  section .Services .parag1 p {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  section .Services .serv1 {
+    width: 10%;
+  }
+  section .main-slider {
+    width: 90%;
+  }
+  .Contact .map {
+    width: 90%;
+  }
+  .Contact ul {
+    width: 90%;
+  }
+}
+/*# sourceMappingURL=home.css.map */

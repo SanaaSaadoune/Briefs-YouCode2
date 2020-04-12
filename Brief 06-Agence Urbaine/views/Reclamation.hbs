@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link href="../public/css/style.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+               </label>
+               <input type="checkbox" id="check">
+               <div class="Menu-link2" >
+                
+                    <a href="home.hbs">Home</a>
+                    <a >Réclamation</a>
+                    <a class="active" href="questionnement.hbs" >Questionnaire</a>
+                
+            </div>
+            <div class="Logo"> <img src="../public/img/question/img.png" class="Logo"></div>
+           
+                <ul>
+                    <a href="home.html">Home</a>
+                    <li><a href="home.hbs" >Home</a></li>
+                    <li class="active question"><a >Réclamation</a></li>
+                    <li  ><a href="questionnement.hbs">Questionnaire</a></li>
+                </ul>
+           
+            <div>
+                <img src="../public/img/question/Icon open-account-login.png" class="deconnecter">
+            </div>
+        </nav>
+       <div class="Titre">
+
+        <div><h1>Bienvenue à l'Agence</h1></div>
+        <div><h1>Urbaine de <span>Safi</span></h1></div>
+        <button>Plus d'infos</button>
+       </div>
+    </header>
+    <!-- Reclamation -->
+    <div class="Reclamation Question">
+        <h2 style="margin-top:60px">Réclamation</h2>
+        <div class="border2"></div>
+<form method="POST" action="Reclamation.hbs">
+    <div class="select-service">
+            <label for="formGroupExampleInput">Service</label>
+            <select id="select" name="service">
+                {{#each data}}
+                <option>{{this.Nom_service}}</option>
+                {{/each}}
+            </select>
+            <button type="submit">Rechercher</button>
+</form>
+        
+            
+        </div>
+        <div class="container reclamation-info">
+            <table class="table table-striped table-bordered">
+            
+                <thead>
+                    <tr>
+                    
+                        <th>Date</th>
+                        <th>Service</th>
+                        <th>Client</th>
+                        <th>Description</th>
+                        
+                    
+                    </tr>
+                    
+                    
+                    
+                </thead>
+                
+                <tbody>
+                    {{#each data2}}
+                    <tr>
+<td>{{this.datequestion}}</td>
+<td>{{this.Nom_service}}</td>
+<td>{{this.CIN}}</td>
+<td>{{this.description}}</td>
+
+                    </tr>
+                     {{/each}}
+         
+                </tbody>
+            </table>
+        </div>
+       
+    </div>
+  <section id="testimonials" class="py-4">
+    <div class="container">
+        <h2 class="l-heading">Des Bonnes Réclamations</h2>
+        <div class="testimonial bg-primary">
+          <img src="../public/img/reclamation/person-1.jpg" alt="Samantha">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam eligendi quibusdam, dolorum maxime cum numquam quisquam, deleniti eum incidunt, velit non consectetur. Facere, ipsa maxime, ullam id amet odio laboriosam sit iusto tempore fugit exercitationem, a dolore quo maiores nisi!</p>
+        </div>
+  
+        <div class="testimonial bg-primary">
+            <img src="../public/img/reclamation/person-2.jpg" alt="Jen">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam eligendi quibusdam, dolorum maxime cum numquam quisquam, deleniti eum incidunt, velit non consectetur. Facere, ipsa maxime, ullam id amet odio laboriosam sit iusto tempore fugit exercitationem, a dolore quo maiores nisi!</p>
+          </div>
+      </div>
+  </section>
+    <section class="Contact">
+
+        <h2>Contact</h2>
+        <div class="border2"></div>
+        <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3372.658789965705!2d-9.234824884855412!3d32.29415048112049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdac20d5c3a99d81%3A0x45f2898762ef52ea!2sAgence%20Urbaine%20De%20Safi!5e0!3m2!1sfr!2sma!4v1584297741323!5m2!1sfr!2sma" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="map"></iframe>
+        </div>
+
+    </section>
+   {{> footer}}
+    {{!-- <script src="public/Traitement/file.js"></script> --}}
+</body>
+</html>

@@ -1,0 +1,31 @@
+
+/* Testimonials */
+#testimonials h2 {
+    color: black;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+#testimonials .testimonial {
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    opacity: 0.9;
+    z-index: 0;
+}
+
+#testimonials .testimonial img {
+    width: 100px;
+    float: left;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+.bg-primary {
+    background: #D5AC63 !important;
+    color: #333;
+}
+.l-heading{
+    font-family: Segoe UI;
+    font-weight: bold;
+    font-style: italic;
+}

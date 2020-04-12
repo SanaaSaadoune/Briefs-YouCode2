@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link href="../public/css/style.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+       
+        <nav>
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+               </label>
+               <input type="checkbox" id="check">
+               <div class="Menu-link2" >
+                
+                    <a href="home.hbs">Home</a>
+                    <a href="Reclamation.hbs">Réclamation</a>
+                    <a class="active question" >Questionnaire</a>
+            </div>
+            <div class="Logo"> <img src="../public/img/question/img.png" class="Logo"></div>
+            <ul>
+                <li><a href="home.hbs">Home</a></li>
+                <li><a href="Reclamation.hbs">Réclamation</a></li>
+                <li class="active question" id="Questionnaire" ><a>Questionnaire</a></li>
+            </ul>
+            <div>
+                <img src="../public/img/question/Icon open-account-login.png" class="deconnecter">
+            </div>
+        </nav>
+       <div class="Titre">
+
+        <div><h1>Bienvenue à l'Agence</h1></div>
+        <div><h1>Urbaine de <span>Safi</span></h1></div>
+        <button>Plus d'infos</button>
+       </div>
+    </header>
+    <!-- Question -->
+    <section class="Question">
+        <h2 style="margin-top:60px">Question</h2>
+        <div class="border2"></div>
+       <div class="container">
+        <form class="frm" method="POST" action="questionnement.hbs">
+            
+                <label for="formGroupExampleInput">Service</label>
+               <select class="form-control" onchange="getSelectValue()" id="select" name="service">
+                {{#each data}}
+                <option>{{this.Nom_service}}</option>
+                {{/each}}
+               </select>
+             
+            <div class="form-group">
+              <label >Date de question</label>
+              <input type="Date" class="form-control" name="Date" id="Date" placeholder="Example input">
+            </div>
+          
+            <div class="form-group">
+                <label for="formGroupExampleInput2">CIN</label>
+                <input type="text" name="CIN" class="form-control" id="Prenomclient" placeholder="Nom client">
+              </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Description</label>
+               <textarea class="form-control" name="Description" id="Description" ></textarea>
+              </div>
+            <button id="btn" type="submit" value="Envoyer">Envoyer</button>
+          </form>
+         
+       </div>
+    </div>
+               
+         
+            
+            
+    </section>
+    <section class="Contact">
+
+        <h2>Contact</h2>
+        <div class="border2"></div>
+        <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3372.658789965705!2d-9.234824884855412!3d32.29415048112049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdac20d5c3a99d81%3A0x45f2898762ef52ea!2sAgence%20Urbaine%20De%20Safi!5e0!3m2!1sfr!2sma!4v1584297741323!5m2!1sfr!2sma" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="map"></iframe>
+        </div>
+
+    </section>
+    <div class="bg-modal-2">
+        <div class="modal-content2">
+            <div class="close">+</div>
+            <h1 id="titre">Service</h1>
+            <div class="form">
+            <div class="info"><span id="Nom"></span></div>
+            <div class="info"><span id="Descriptions" style="color: black;"></span></div>
+            
+            </div>
+        </div>
+    </div>
+    {{> footer}}
+    <script src="../public/Traitement/file.js"></script>
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Accueil </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/css/home.css"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+</head>
+<body>
+    <header>
+        <nav>
+          <label for="check" class="checkbtn">
+              <i class="fas fa-bars"></i>
+             </label>
+             <input type="checkbox" id="check">
+             <div class="Menu-link2" > 
+                  <a  href="#" >Home</a>
+                  <a href="#Missions">Missions</a>
+                  <a href="#Services">Services</a>
+                  <a href="#Activites">Activités</a>
+                  <a href="#Contact">Contact</a>
+                  <a href="questionnement.hbs">Questionnaire</a>
+              </div>
+          <div class="Logo"> <img src="../public/img/Images/logo.png" class="Logo"></div>
+          <ul>
+              <li><a style="color:#D5AC63" href="#">Home</a></li>
+              <li><a href="#Missions">Missions</a></li>
+              <li><a href="#Services">Services</a></li>
+              <li><a href="#Activites">Activités</a></li>
+              <li><a href="#Contact">Contact</a></li>
+          </ul>
+          <button class="btnIdentifier" onclick="Connexion()"> Se connecter </button>
+      </nav>
+
+
+      <form method="post" action="questionnement.hbs" id="connexion" >
+        <fieldset id="f2"> 
+            <p><img src="../public/img/Images/login.png" alt="login" class="imageLog"> </p>
+            <p> Bienvenue </p>
+            <hr >
+            <div>
+                <input type="text" id="emailLog" placeholder="Email" autofocus required>
+                <input type="password" id="mdpLog" placeholder="Mot de passe " required>
+            </div>
+            <input type="checkbox" class="show" onclick="myFunction()"> <span style="font-size: 14px">Montrer mot de passe</span> 
+            <div class="BtnConnexion">
+                <input type="submit" value="Connexion" >
+            </div>
+            <p class="lien"><a href="javascript:inscription()"> Inscris-toi maintenant! </a></p>
+        </fieldset>
+    </form>
+
+     <form method="post" action="traitement.php" id="inscription" >
+        <fieldset id="f1">
+            <p> Inscrivez-vous </p>
+            <hr >
+            <div>
+                <label for="nom"> Nom complet : </label>
+                <input type="text" id="nomc"  ><span id="9"  style="color:red;font-size: 13px;"></span>
+            </div>
+            <div>
+                <label for="num"> Numéro de téléphone : </label>
+                <input type="text" id="numc"  ><span id="10"  style="color:red;font-size: 13px;"></span>
+            </div>
+            <div>
+                <label for="email"> Email : </label>
+                <input type="text" id="email" autofocus><span id="6"  style="color:red;font-size: 13px;"></span>
+            </div>
+            <div>
+                <label for="mdp"> Mot de passe : </label>
+                <input type="password" id="mdp"><span id="7" style="color:red;font-size: 13px;"></span>
+            </div>
+            <div>
+                <label for="cmdp"> Confirmation du mot de passe : </label>
+                <input type="password" id="cmdp"><span id="8" style="color:red;font-size: 13px;"></span>
+            </div>
+            <div class="BtnInscription">
+                <input type="button" value="Inscription" onclick="ValiderInsc()" >
+            </div>
+            <div>
+                <p> Déja inscris? <br/><a href="javascript:Connexion2()">Connectes-toi maintenant !</a></p>
+            </div>
+        </fieldset>
+    </form>
+
+    <script>
+        var modal = document.getElementById("inscription");
+        var modal2 = document.getElementById("connexion");
+       
+        function inscription(){   
+          modal2.style.display="none";
+          modal.style.display="block";
+        }
+
+        function Connexion2(){ 
+          modal.style.display="none";
+          modal2.style.display="block";
+        }
+
+        function ValiderInsc(){
+            cpt2=0;
+            var rgxEmail =/^[A-Za-z0-9-_.]+@[A-Za-z]{4,9}.[A-Za-z]{2,3}$/;
+            var rgxNum =/^[0][5-7-6][0-9]{8}$/;
+            var email=document.getElementById("email");
+            var mdp=document.getElementById("mdp");
+            var cmdp=document.getElementById("cmdp");
+            var nom=document.getElementById("nomc");
+            var num=document.getElementById("numc");
+
+            if( email.value=="" ) document.getElementById('6').innerHTML= "Remplir l'email "; 
+                else if(!rgxEmail.test(email.value)) document.getElementById('6').innerHTML = "Format incorrect";
+                else {
+                    document.getElementById('6').innerHTML=" ";
+                    cpt2++;
+                }
+            if( nom.value=="" ) document.getElementById('9').innerHTML= "Remplir le nom "; 
+                else {
+                    document.getElementById('9').innerHTML=" ";
+                    cpt2++;
+                }
+            if( num.value=="" ) document.getElementById('10').innerHTML= "Remplir le num "; 
+                else if(!rgxNum.test(num.value)) document.getElementById('10').innerHTML = "Format incorrect";
+                else {
+                    document.getElementById('10').innerHTML=" ";
+                    cpt2++;
+                }    
+            if( mdp.value=="" ) document.getElementById('7').innerHTML= "Remplir le mdp";
+                else {
+                    document.getElementById('7').innerHTML=" ";
+                    cpt2++;
+                }
+            if( cmdp.value=="" ) document.getElementById('8').innerHTML= "Remplir la confirmation";
+                if(mdp.value != cmdp.value) document.getElementById('8').innerHTML="Confirmation incorrecte";   
+                else {
+                    document.getElementById('8').innerHTML=" ";
+                    cpt2++;
+                }
+            if(cpt2==5){
+                modal.style.display="none";
+                alert("Inscription bien effectuée !")
+                modal2.style.display="block";
+            }
+        }
+
+        window.addEventListener("click", function(event) {
+            if(event.target == modal)
+            {
+                modal.style.display="none";
+            }
+        });
+
+        window.addEventListener("click", function(event) {
+            if(event.target == modal2)
+            {
+                modal2.style.display="none";
+            }
+        });
+        function Connexion(){   
+            modal2.style.display="block";
+        }
+
+        function Inscription2(){   
+            modal.style.display="block";
+        }
+
+        function myFunction() {
+            var x = document.getElementById("mdpLog");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+
+
+      <script src="../public/Traitement/jquery.js"></script>
+        <script>
+            $(function(){
+              $('nav a').click(function(){
+                $('nav a').css("color","rgb(255,255,255,255");
+                  $(this).css("color","#D5AC63");
+              });
+            });
+        </script> 
+      <div class="Titre">
+        <div><h1>Bienvenue à l'Agence</h1></div>
+        <div><h1>Urbaine de <span>Safi</span></h1></div>
+        <button onclick="Inscription2()">Posez votre question !</button>
+       </div>
+    </header>
+
+    <div class="espace">
+    </div>
+
+    <section>
+      <h1> A propos de notre Agence</h1>
+      <hr >
+      <div class="espace">
+      </div>
+      <div class="Part1">
+        <img src="../public/img/Images/4.png" alt="img" class="Image1" height="400px">
+        <p> Nous, Directeur de l’Agence Urbaine de Safi-Youssoufia, nous nous engageons à consacrer les ressources humaines et matérielles 
+          nécessaires pour maintenir, et assurer l’amélioration continue de notre système management qualité, et ce conformément aux exigences de
+           la norme ISO 9001 :20015. Nous nous engageons également à promouvoir une culture de transparence, d’équité et d’excellence en mettant 
+           nos clients et partenaires au centre de nos préoccupations.
+        </p>
+      </div>
+      <div id="Missions"class="espace">
+      </div>
+      <div class="espace">
+      </div>
+
+      <h1 > Nos Missions </h1>
+      <hr class="hr2"  >
+      <div class="espace">
+      </div>
+      <div class="Part2">
+        <img src="../public/img/Images/Planification.jpg" alt="img" class="Image1" height="400px">
+        <div>
+          <h2> MISSION DE PLANIFICATION URBAINE : </h2>
+          <ul>
+            <li>
+              La réalisation des études nécessaires à l’établissement des schémas directeurs d’aménagement urbain et le suivi de L’exécution des orientations qui y sont définies
+            </li>
+            <li>
+              La programmation des projets d’aménagement inhérent à la réalisation des objectifs des schémas directeurs
+            </li>
+            <li>
+              La préparation des projets de documents d’urbanisme réglementaires, notamment les plans de zonages, les plans d’aménagement et les plans de développement
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="Part2 Part3">
+        <div>
+          <h2> MISSION DE CONTROLE DE LA CONFORMITE DES PROJETS : </h2>
+          <ul>
+            <li>          
+                La délivrance de l’avis conforme sur les projets de lotissement, groupes d’habitation, morcellement et constructions transmis par les autorités compétentes.
+            </li>
+            <li>
+              Le contrôle de la conformité des lotissements, morcellements, groupes d’habitations et autorités et les dispositions législatives et réglementaires en vigueur.
+            </li>
+          </ul>
+        </div>
+        <img src="../public/img/Images/Control.jpg" alt="img" class="Image1" height="400px">
+      </div>
+
+      <div class="Part2">
+        <img src="../public/img/Images/Realisation.jpg" alt="img" class="Image1" height="400px">
+        <div>
+          <h2> MISSION DE REALISATION DE PROJETS : </h2>
+          <ul>
+            <li>
+              La réalisation d’étude de projet d’aménagement de secteurs particuliers et exécuter tous les projets de travaux édilitaires ou d’aménagement pour le compte d’opérateurs publics ou privés.
+            </li>
+            <li>
+              La promotion et la réalisation d’opérations de réhabilitation urbaine, de rénovation immobilière et de restructuration de quartiers dépourvus d’équipements d’infrastructure et, à cette fin, réaliser les études et acquérir les immeubles nécessaires à ces opérations.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="Part2 Part3"> 
+        <div>
+          <h2> MISSION D’ASSISTANCE AUX OPERATEURS PUBLICS ET PRIVES : </h2>
+          <ul>
+            <li>
+              La promotion de la constitution et le développement de groupement de propriétaire et d’associations syndicales et leur encadrement dans le suivi de la réalisation des opérations en coordination avec les élus.            </li>
+            <li>
+              La fourniture d’assistance technique aux collectivités locales et autres opérateurs publics et privés en matière d’urbanisme et d’aménagement
+            </li>
+            <li>
+              La collecte et la diffusion de toutes informations relatives au développement urbanistique.            </li>
+          </ul>
+        </div>
+        <img src="../public/img/Images/Assistance.jpg" alt="img" class="Image1" height="400px">
+      </div>
+      <div id="Services"class="espace">
+      </div>
+      <div class="espace">
+      </div>
+
+      <h1> Nos Services </h1>
+      <hr class="hr2"  >
+      <div class="espace"></div>
+          <div class="Services">
+            <div class="parag1">
+              <h2> Appels d'offres</h2>
+              <p>
+                Cet espace contient le programme prévisionnel, la liste des avis des appels d’offre lancés ainsi que les résultats de ceux déjà lancés.
+              </p>
+            </div>
+            <div class="serv1">
+                  <img src="../public/img/Images/appel.png" alt="back" width="150" height="150px">
+                  <div class="trait"></div>
+              </div>
+              <div class="parag1">      
+              </div>
+            </div> 
+
+            <div class="Services">
+              <div class="parag1">
+              </div>
+              <div class="serv1">
+                    <img src="../public/img/Images/recruteur.png" alt="back" width="150" height="150px">
+                    <div class="trait"></div>
+                </div>
+                <div class="parag1">
+                  <h2> Recrutement</h2>
+                  <p>
+                    Cet espace contient les avis de recrutement et candidatures lancées par l’AUS. Il va contenir aussi la liste des candidats présélectionnés et enfin ceux retenus.                  </p>
+                </div>
+          </div> 
+            
+          <div class="Services">
+              <div class="parag1">
+                <h2> Médiathèque</h2>
+                <p>
+                  Cet espace contient une bibliothèque multimédia des activités et événement liés à l’AUS.
+                </p>
+              </div>
+              <div class="serv1">
+                    <img src="../public/img/Images/enquette.png" alt="back" width="150" height="150px">
+                    <div class="trait"></div>
+              </div>
+              <div class="parag1">
+              </div>
+          </div> 
+
+          <div class="Services" class="lastService">
+            <div class="parag1">   
+            </div>
+            <div class="serv1">
+                  <img src="../public/img/Images/mediathequ.png" alt="back" width="150" height="150px"><div class="trait" style="border-right: 1px solid white;"></div>
+            </div>
+            <div class="parag1">
+                <h2> Enquête Satisfaction </h2>
+                <p>
+                  L’AUS lance annuellement une enquête de satisfaction au profit de ces clients, partenaires et professionnelles. Cet espace contiendra le formulaire de l’enquête de satisfaction.
+                </p>
+            </div>
+          </div> 
+
+          <div id="Activites" class="espace">
+          </div>
+          <div class="espace">
+          </div>
+
+          <h1> Nos Activités </h1>
+          <hr class="hr2"  >
+          <div class="espace"></div>
+          <div class="main-slider">
+            <img id="image" src="../public/img/Images/activite1.jpg" alt="holder" class="img-slider">
+            <div class="img-controller">
+                <div class="nav-icon">
+                    <i onclick="moveLeft()" class="fa fa-chevron-left" style="font-size:36px"></i>
+                    <i onclick="moveRight()" class="fa fa-chevron-right" style="font-size:36px"></i>
+                </div>
+            </div>
+          </div>
+          <div class="img-info">
+              <div id="image-title">Journée internationale de la femme 2020</div>
+          </div>
+        <script src="../public/Traitement/script.js"></script>
+    </section>
+
+
+    <div id="Contact" class="espace">
+    </div>
+    <div class="espace">
+    </div>
+
+    <section class="Contact">
+      <h1>Contact</h1>
+      <hr>
+      <div class="espace">
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3372.658789965705!2d-9.234824884855412!3d32.29415048112049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdac20d5c3a99d81%3A0x45f2898762ef52ea!2sAgence%20Urbaine%20De%20Safi!5e0!3m2!1sfr!2sma!4v1584297741323!5m2!1sfr!2sma" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="map"></iframe>
+      </div>
+      <ul style=" list-style: square inside;"> 
+        <li > <b>Adresse </b>: Rue Idriss I, B.P 55, Plateau Safi </li>
+        <li> <b>Tél </b>: 0524/63.07.45 Fax : 0524/63.08.99 </li>
+        <li> <b>Email </b>: contact@ausy.ma</li>
+      </ul>
+    </section>
+
+    <div class="espace">
+    </div>
+
+    <div>
+      <h2 style="text-align: center;"> Quelques questions :</h2>
+      <ul style="list-style: circle inside;width:60%; margin:auto; ">
+      {{#each data3}}
+                <li>{{this.description}}</li>
+      {{/each}}
+      </ul>
+
+    </div>
+
+    <div class="espace">
+    </div>
+
+   {{> footer}}
+    
+</body>
+</html>

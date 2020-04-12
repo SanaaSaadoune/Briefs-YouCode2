@@ -1,0 +1,28 @@
+[
+    {
+        "ID" : null,
+        "Nom_service" : "Choisir",
+        "Description" : null
+    },
+    {
+        "ID" : 1,
+        "Nom_service" : "Appels d'offres",
+        "Description" : "Cet espace contient le programme prévisionnel, La liste des avis des appels d'offre lancés ainsi que les résultats de ceux deja lancés"
+    },
+    {
+        "ID" : 2,
+        "Nom_service" : "Recrutement",
+        "Description" : "Cet espace contient les avis de recrutement et candidatures lancées par l’AUS. Il va contenir aussi la liste des candidats présélectionnés et enfin ceux retenus."
+    },
+    {
+        "ID" : 3,
+        "Nom_service" : "Médiathèque",
+        "Description" : "Cet espace contient une bibliothèque multimédia des activités et événement liés à l’AUS"
+    },
+    {
+        "ID" : 4,
+        "Nom_service" : "Enquête de Satisfaction",
+        "Description" : "L’AUS lance annuellement une enquête de satisfaction au profit de ces clients, partenaires et professionnelles. Cet espace contiendra le formulaire de l’enquête de satisfaction."
+}
+
+]
