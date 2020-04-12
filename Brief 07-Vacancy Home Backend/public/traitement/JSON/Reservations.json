@@ -1,16 +1,18 @@
 [
     {
-        "CIN": "C123",
-        "nom": "Sanaa",
-        "age": "20",
-        "periode": "7",
-        "nbrPers": "4"
+        "CIN": "H123",
+        "nom": "SANAA",
+        "age": "1999-12-09",
+        "datedebut": "2020-12-12",
+        "datefin": "2020-12-20",
+        "nbrPers": "2"
     },
     {
-        "CIN": "hh",
-        "nom": "hh",
-        "age": "0004-05-04",
-        "periode": "0222-04-04",
-        "nbrPers": "44"
+        "CIN": "S123",
+        "nom": "Client",
+        "age": "1996-08-08",
+        "datedebut": "2020-10-10",
+        "datefin": "2020-10-20",
+        "nbrPers": "5"
     }
 ]

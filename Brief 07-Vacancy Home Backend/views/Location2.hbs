@@ -281,6 +281,30 @@
                         <a href="./Reservation.hbs" class="reservBtn"><button> Réserver </button></a>
                     </div>
                 </div>
+
+                {{#each Maisons}}
+                <div class="main-slider">
+                    <div class="fimage">
+                        <img id="image11" src="{{this.image}}" alt="holder" class="img-slider">
+                        <div class="img-controller">
+                            <div class="nav-icon">
+                                <i class="fa fa-chevron-left" style="font-size:36px"></i>
+                                <i class="fa fa-chevron-right" style="font-size:36px"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <ul>
+                            <li> <b>Description</b> {{this.description}} </li>
+                            <li> <b>Adresse</b> :  {{this.adresse}}</li>
+                            <li> <b>Prix</b> : {{this.prix}}</li>
+                        </ul>
+                        <a href="./Reservation.hbs" class="reservBtn"><button> Réserver </button></a>
+                    </div>
+                </div>
+                {{/each}}
+
+
                 <script src="../public/traitement/script.js"></script>
                 
             </div>
