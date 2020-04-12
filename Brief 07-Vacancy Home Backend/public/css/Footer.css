@@ -1,0 +1,61 @@
+footer {
+  background-color: #5a065a;
+  color: white;
+  padding-top: 20px;
+}
+
+footer img {
+  width: 160px;
+}
+
+footer #facebook {
+  width: 15px;
+}
+
+footer a img {
+  margin-right: 6px;
+  width: 25px;
+}
+
+footer .footer1 {
+  width: 80%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 14px;
+}
+
+footer .footer1 .block {
+  line-height: 30px;
+  width: 30%;
+}
+
+footer .footer1 .contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer .footer1 .logo {
+  width: 60px;
+  height: 60px;
+}
+
+footer .copy {
+  margin-top: 20px;
+  background-color: lightgray;
+  padding: 3px;
+  border: 1px solid #5a065a;
+}
+
+footer .copy p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #5a065a;
+}
+/*# sourceMappingURL=Footer.css.map */

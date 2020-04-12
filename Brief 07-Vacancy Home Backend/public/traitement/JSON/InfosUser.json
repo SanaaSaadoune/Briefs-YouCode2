@@ -1,0 +1,18 @@
+[
+    {
+        "nom": "Admin",
+        "prenom": "Admin",
+        "age": "21",
+        "tel": "0612058055",
+        "email": "ADMIN",
+        "mdp": "ADMIN"
+    },
+    {
+        "nom": "Sanaa",
+        "prenom": "Sanaa",
+        "age": "20",
+        "tel": "0612345678",
+        "email": "sanaa@gmail.com",
+        "mdp": "123"
+    }
+]

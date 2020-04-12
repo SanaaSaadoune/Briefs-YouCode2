@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Admin</title>
+    <link href="../public/css/Admin.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+        
+        <div class="menu">
+            <img src="../public/img/logo.png" alt="logo" id="logo">
+            <a href="Location.hbs"><button class="logout"> Déconnexion  <img src="../public/img/logout.png">  </button></a>
+        </div>
+           
+        <div class="espace"> </div>
+        <div class="all">
+            <div class="part1">
+                <button type="button"  id="btnAdd"> <img src="../public/img/add.png">Add Home</button>
+                <div class="espace"></div>
+                <div id="newHome">
+                    <form action="/d" method="POST">
+                        <input type="text"name="description" placeholder="description"><br>
+                        <input type="text" name="adresse" placeholder="adresse"><br>
+                        <input type="number" name="prix" placeholder="prix" ><br>
+                        <div style="text-align: center;"><button id="btnAjout"> Add Home</button></div>
+                    </form>
+                </div>
+                <script>
+                    $(document).ready(function()
+                    {
+                        $('#btnAdd').click(function(){
+                            $('#newHome').slideToggle(1000);
+                        });
+                    });
+                </script>
+            </div>
+
+            <div class="part2">
+                <button type="button"  id="btnShow"> <img src="../public/img/show.png">Show reservations</button>
+                        <table id="table2" border=1>
+                            <thead>
+                                <tr>
+                                    <th> CIN </th>
+                                    <th> Nom </th>
+                                    <th> Age </th>
+                                    <th> Période </th>
+                                    <th> Nb personnes </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each Reservations}}
+                                <tr>
+                                    <td>{{this.CIN}}</td>
+                                    <td>{{this.prenom}}</td>
+                                    <td>{{this.age}}</td>
+                                    <td>{{this.periode}}</td>
+                                    <td>{{this.nbrPers}}</td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+
+                    <script>
+                    $(document).ready(function()
+                    {
+                        $('#btnShow').click(function(){
+                            $('#table2').slideToggle(1000);
+                        });
+                    });
+                </script>
+            </div>
+
+            <div class="part3">
+                        <button type="submit"  id="btnModif"> <img src="../public/img/delete.png">Update Delete User</button>
+                        <table border=1 id="table3">
+                            <thead>
+                                <tr>
+                                    <th> Nom </th>
+                                    <th> Prenom </th>
+                                    <th> Age </th>
+                                    <th> Tel </th>
+                                    <th> Email </th>
+                                    <th> Mdp </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each InfosUser}}
+                                <tr>
+                                    <td>{{this.nom}}</td>
+                                    <td>{{this.prenom}}</td>
+                                    <td>{{this.age}}</td>
+                                    <td>{{this.tel}}</td>
+                                    <td>{{this.email}}</td>
+                                    <td>{{this.mdp}}</td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+
+                        <script>
+                            $(document).ready(function()
+                            {
+                                $('#btnModif').click(function(){
+                                    $('#table3').slideToggle(1000);
+                                });
+                            });
+                        </script>
+            </div>
+         </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+
+*{ 
+    margin: 0;
+    padding: 0;
+}
+body{
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    height: 100%;
+    width: 100%;
+    p{
+    text-align:center; 
+    color:white; 
+    font-size:40px; 
+    font-weight:bold;
+    margin-top:100px;
+    }
+    button{
+        background-color: thistle; 
+        color:white; 
+        width:200px; 
+        border-radius:15px;
+        border-style:none; 
+        font-size:30px;
+        font-weight:bold;
+        text-align: center;
+        margin-top:100px;
+        padding:10px;
+        cursor: pointer;
+        &:hover{
+            background-color: white; 
+            color:thistle; 
+        }
+    }
+}

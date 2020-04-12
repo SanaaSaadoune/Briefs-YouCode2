@@ -1,0 +1,55 @@
+$Color :rgb(90, 6, 90);
+$BGbtn :rgb(211, 211, 211);
+footer{
+    background-color: $Color;
+    color: white;
+    padding-top:20px;
+    img{
+        width: 160px;
+    }
+    #facebook {
+        width:  15px;  
+    }
+    a img{
+        margin-right: 6px;
+        width:  25px;
+    }
+    .footer1{
+        width: 80%;
+        margin:auto;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        .block{
+        line-height: 30px;
+        width: 30%;
+        }
+        .contact{
+            display: flex;
+        }
+        .logo{
+            width: 60px;
+            height:60px;
+        }
+    }
+    .copy{
+            margin-top:20px;
+            background-color: $BGbtn;
+            padding:3px;
+            border:1px solid $Color;
+            p{
+                text-align: center;
+                font-size: 16px;
+                font-weight: bold;
+                color:$Color;
+            }
+    }
+    
+}
+
+
+
+
+
+
+

@@ -1,0 +1,321 @@
+$Color :#5a065a;
+$BGbtn :rgb(211, 211, 211);
+@mixin btn() {
+    width: 110px;
+    height: 40px;
+    background-color: $Color;
+    color:white;
+    font-size: 18px;
+    border-radius: 20px;
+    border-style: none;
+    &:hover{
+        cursor: pointer;
+        background-color:$BGbtn;
+        color: $Color;
+    }  
+}
+header {
+    height:700px;
+    width: 100%;
+    background-image:url("../img/plage1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .menu{
+        width: 100%;
+        background-color: black;
+        height: 80px;
+    }
+
+    img{
+        float: left;
+        height: 50px;
+        margin : 30px;
+        margin-top : 10px;
+        margin-left: 200px;
+        
+    }
+
+    .menu1{
+        display: flex;
+        width:890px;
+        justify-content: space-between;
+        padding-top : 20px;
+        margin-right: 60px;
+        float: right;
+        button{
+            @include btn();    
+        }
+    }
+    a{
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        &:hover{
+            color:rgb(90, 6, 90);
+            text-decoration: underline;
+        }
+    }
+    .home{
+        text-decoration: underline;
+        text-decoration-color: purple;
+    }
+
+    .btnConnexion{
+        @include btn();
+        width: 140px;
+    }
+
+    .Part1{
+        width: 100%;
+        display: flex;
+        .parag1{
+            width: 100%;
+            margin: auto;
+            color: white;
+            text-align: center;
+            margin-top:250px;
+            font-size: 22px;
+            animation-name: captionText;
+            animation-duration: 2s;
+            h2{
+                font-size: 50px;
+            }
+            p{
+                width: 70%;
+                margin:auto;
+                margin-top: 10px;
+                font-size: 18px;
+            }
+        }
+    }
+   
+    #validation,#connexion{
+        display: none; 
+        position: absolute;
+        position: fixed;
+        z-index: 1; 
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%; 
+        overflow: auto;  
+        background-color: rgba(0,0,0,0.7); 
+        #f1{
+            width:45%;
+            margin:auto;
+            margin-top:60px;
+            background-color: white;
+            border-radius: 20px;
+            padding: 30px;
+            font-size: 20px;
+
+            span{
+                color:red;
+                font-size: 15px;
+                margin-top:-5px;
+            }
+            td{
+                height:50px;
+                width: 30%;
+            }
+            h2{
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            label{
+                padding-left: 20px;
+            }
+            input{
+                height: 20px;
+                border:1px solid black;
+            }
+            .btn{
+            @include btn();
+            float: right;
+            }
+            .annuler{
+                margin-right:10px;
+            }
+        }
+    }
+
+    #connexion{
+        #f1{
+            width:30%;
+            margin-top:150px;
+            p{
+                margin-bottom: 40px;
+                height: 90px;
+                width:100px;
+                margin: auto;
+                img{
+                    height: 90px;
+                    width:100px;
+                    margin: auto;
+                }
+            }
+            td{
+                height:50px;
+                width: 45%;
+                margin-right: 10px;
+            .lien{
+                color: $Color;
+                font-size: 13px;
+                padding-left: 20px;
+                cursor: pointer;
+
+            }}
+            .btn{
+                margin-top:50px;
+                }
+        }
+    }
+
+
+    @keyframes captionText{
+        0%{
+            opacity:0; transform: translateX(-100px);
+        }
+        100%{
+            opacity:1; transform: translateX(0px);
+        }
+        
+    }
+
+}
+
+
+
+    .espace{
+        height:80px;
+    }
+
+
+    .nav {
+        width: 100%;
+        height: 10px;
+    }
+    
+    #check {
+        display: none;
+    }
+    
+    label #btn, label #cancel, .resp {
+        display: none;
+    }
+    
+
+
+
+  
+@media only screen and (max-width: 1250px) {
+    
+        header{
+            .parag1 {
+                width: 90%;
+                
+            }
+            .Part1{
+                flex-direction: column;
+            }
+            .sidebar {
+                position: fixed;
+                left: -250px;
+                width: 250px;
+                height: 400px;
+                background: #000000;
+                -webkit-transition: all .5s ease;
+                transition: all .5s ease;
+            }
+            
+            .menu1 {
+                display: block;
+                width: 50%;
+                margin-top: 70px;
+                font-size: 22px;
+                color: white;
+                text-align: center;
+                line-height: 70px;
+                background: 120013;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                    -ms-user-select: none;
+                        user-select: none;
+                    a{
+                        display: block;
+                    height: 100%;
+                    width: 100%;
+                    line-height: 65px;
+                    font-size: 20px;
+                    color: white;
+                    padding-left: 0px;
+                    -webkit-box-sizing: border-box;
+                            box-sizing: border-box;
+                    border-top: 1px solid #1d001f;
+                    border-bottom: 1px solid black;
+                        &:hover{
+                            padding-left: 20px;
+                        }
+                    }
+             }
+            .menu {
+                    img{
+                        display: none;
+                    }
+            }
+            .btnReserver{
+                margin-top: -20px;
+            }
+            #check {
+                    display: none;
+            }
+
+            .resp{
+                    display: block;
+                    text-align: center;
+            }
+            label #btn, label #cancel {
+                    display: block;
+                    position: fixed;
+                    cursor: pointer;
+                    background: #1d001f;
+                    border-radius: 3px;
+            }
+            label #btn {
+                    left: 10px;
+                    font-size: 35px;
+                    color: white;
+                    padding: 6px 12px;
+                    -webkit-transition: all .5s;
+                    transition: all .5s;
+            }
+            label #cancel {
+                    z-index: 1111;
+                    left: -195px;
+                    font-size: 45px;
+                    color: white;
+                    padding: 4px 9px;
+                    -webkit-transition: all .5s ease;
+                    transition: all .5s ease;
+            }
+            #check:checked ~ .sidebar {
+                    left: 0;
+             }
+            #check:checked ~ label #btn {
+                    left: 250px;
+                    opacity: 0;
+                    pointer-events: none;
+            }
+            #check:checked ~ label #cancel {
+                    left: 195px;
+            }
+
+        }
+        .contact{
+            font-size:12px;
+        }
+        
+    }

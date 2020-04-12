@@ -1,0 +1,172 @@
+@import "./Header";
+@import "./Footer";
+@mixin btn() {
+    width: 110px;
+    height: 40px;
+    background-color: $Color;
+    color:white;
+    font-size: 18px;
+    border-radius: 20px;
+    border-style: none;
+    &:hover{
+        cursor: pointer;
+        background-color:$BGbtn;
+        color: $Color;
+    }  
+}
+
+*{
+    margin:0;
+    padding:0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+body{ 
+    header{
+        background-image: none;
+        height: 80px;
+        width: 100%;
+        background-color: black;
+        margin-bottom: 0px;
+        .nav {
+            height: 0px;
+          }
+    }
+    .slider{
+        width: 90%;
+        margin: auto;
+        height: 400px;
+            .slide{
+            width: 100%;
+            height: 100%;
+            }
+        
+    }
+
+    .espace{
+        height:80px;
+    }
+
+
+
+    .f1{
+        background-color: white;
+        width:45%;
+        margin: auto;
+        margin-top:-90px;
+        border-radius: 10px;
+        padding: 30px;
+        font-size: 20px;
+        position: relative;
+        z-index: 1;
+        border : 2px solid $Color;
+        span{
+            color:red;
+            font-size: 10px;
+        }
+        td{
+            height:50px;
+            width: 40%; 
+        }
+        #imgPreview{
+            height:200px;
+            width: 500px;
+            padding:90px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        h2{
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        input{
+            height: 20px;
+            width: 230px;
+            border:1px solid black;
+        }
+        .btn{
+        @include btn();
+        float: right;
+        }
+    }
+    
+
+    #validation {
+        display: none; 
+        position: fixed;
+        z-index: 1; 
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;  
+        background-color: rgba(0,0,0,0.7); 
+        h2{
+            text-align: center;
+        }
+        fieldset{
+            background-color: black;
+            color:white;
+            margin: 15% auto; 
+            padding: 20px;
+            border: 2px solid white;
+            width: 40%; 
+            height:400px;
+            font-size: 20px;
+            line-height: 50px;
+            .close {
+                @include btn();
+                color: #aaa;
+                float: right;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+    }
+
+
+}
+
+
+@media only screen and (max-width: 1050px) {
+
+  
+body{ 
+    .slider{
+        width: 100%;
+        height: 300px;
+    }
+
+    .f1{
+        width:90%;
+        margin: auto;
+        margin-top:-50px;
+        padding:20px;
+        font-size: 15px;
+        
+        #imgPreview{
+            height:150px;
+            width: 100%;
+            padding:0px;
+        }
+    }
+    
+    #validation {
+        fieldset{
+            font-size: 15px;
+            width: 60%; 
+        }
+    }
+}
+
+
+}

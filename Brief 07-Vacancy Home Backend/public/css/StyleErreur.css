@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+body p {
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 100px;
+}
+
+body button {
+  background-color: thistle;
+  color: white;
+  width: 200px;
+  border-radius: 15px;
+  border-style: none;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 100px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+body button:hover {
+  background-color: white;
+  color: thistle;
+}
+/*# sourceMappingURL=StyleErreur.css.map */

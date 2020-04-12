@@ -1,0 +1,288 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+$Color :#5a065a;
+$BGbtn :rgb(211, 211, 211);
+@mixin BG() {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin Img() {
+    display: block;
+    position: absolute;
+    height:300px;
+    width:300px;
+    background-color: rgba(0,0,0,0.4);
+    color:white;
+    font-size: 40px;
+    text-align: center;
+    padding-top:100px;
+    box-sizing: border-box;
+}
+
+nav{
+    h1{
+        text-decoration: underline;
+        text-decoration-color: $Color;
+        text-align: center;
+    }
+    .parags{
+        display: flex;
+        width: 90%;
+        margin:auto;
+        justify-content: space-between;
+    }
+    
+    .def,.choix{
+        width: 45%;
+        text-align: center;
+        line-height: 30px;
+        p{
+            margin-top:20px;
+        }
+    }
+   
+        
+    
+    .destinations{
+        width: 100%;
+        display: flex;
+        
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        .images{
+            width: 85%;
+            margin: auto;
+            margin-top:30px;
+            display: flex;flex-wrap: wrap;
+            justify-content: space-between;
+            div{
+                height:300px;
+                width:300px;
+            } 
+            
+            .image1{
+                background-image: url('../img/Hawaii.jpg');
+                    @include BG();
+                    .descr1{
+                        display: none;
+                    }
+                    &:hover .descr1{
+                        @include Img();
+                    }
+            }
+
+            .image2{
+                background-image: url('../img/Turquie.jpg');
+                @include BG();
+                .descr2{
+                    display: none;
+                }
+                &:hover .descr2{
+                    @include Img();
+                }
+            }
+            .image3{
+                background-image: url('../img/Houceima.jpg');
+                @include BG();
+                .descr3{
+                    display: none;
+                }
+                &:hover .descr3{
+                    @include Img();
+                }
+            }
+            .image4{
+                background-image: url('../img/Italie.jpg');
+                @include BG();
+                .descr4{
+                    display: none;
+                }
+                &:hover .descr4{
+                    @include Img();
+                }
+            }
+
+            }
+    }
+    #gal{
+            text-align:center;
+            text-decoration: underline;
+            text-decoration-color: $Color;
+        }
+    .galerie{
+        height: 100%;
+        width: 90%;
+        margin:auto;
+        margin-top:30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .main-slider{
+            flex-direction: column;
+            width: 30%;
+            margin-bottom: 100px;
+            height: 350px;
+            color: white;
+            font-size: 2em;
+
+            .fimage{
+                width: 100%;
+                height:80%;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+            }
+
+            .nav-icon{
+                margin-top:-120px;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 100%;
+                z-index: 4;
+            }
+
+            .nav-icon i{
+                cursor: pointer;
+            }
+
+            .description{
+                padding:20px;
+                padding-top: 5px;
+                color:black;
+                width: 100%;
+                font-size: 13px;
+                border :1px solid black;
+                border-top-style: none;
+                box-sizing: border-box;
+                li{
+                    margin-top:4px;
+                }
+                
+                button{
+                    margin-top: -15px;
+                    float: right;
+                    width: 30%;
+                    height: 30px;
+                    background-color: $Color;
+                    color:white;
+                    font-size: 18px;
+                    border-radius: 20px;
+                    border-style: none;
+                    &:hover{
+                        cursor: pointer;
+                        background-color:$BGbtn;
+                        color: $Color;
+                    }
+                }
+            }
+         }
+         
+    }
+    #validation2{
+        position: fixed;
+        z-index: 1; 
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;  
+        background-color: rgba(0,0,0,0.7); 
+        display: none; 
+        h2{
+            text-align: center;
+        }
+        fieldset{
+            background-color: black;
+            color:white;
+            margin: 15% auto; 
+            padding: 20px;
+            border: 2px solid white;
+            width: 40%; 
+            height:400px;
+            font-size: 20px;
+            line-height: 50px;
+            .btn{
+                @include btn();
+                color: #aaa;
+                float: right;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            
+            .btn:hover,
+            .btn:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+    }
+    .contact{
+        margin-top:50px;
+        display: flex;
+        .sm{
+            width:100%;
+            text-align: center;
+        }
+        
+        div{
+            margin-top:20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        img{
+            width: 33px;
+            height: 30px;
+            &:hover{
+                 cursor:pointer;
+            }
+        }
+        .fb{
+            width:20px;
+        }
+        .phone{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 0,2px;
+        }
+    }
+    
+}
+  
+@media only screen and (max-width: 1050px) {
+    nav{
+        .description{
+            font-size: 10px;
+        }
+        .parags{
+            flex-direction: column;
+
+            .def,.choix{
+                width: 90%;
+                margin: auto;
+                margin-top:30px;
+            }
+            
+        }
+        
+        .images div{
+            width: 80%;
+            margin:auto;
+            margin-bottom: 20px;
+        }
+        
+        .galerie{
+            .main-slider{
+                width: 80%;
+                margin:auto; 
+                margin-bottom: 100px;
+            }
+        }
+    }
+    
+}
+
+

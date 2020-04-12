@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Location maisons</title>
+    <link href="../public/css/Style.css" rel="stylesheet">
+</head>
+<body>
+       
+        <header>
+            <div class="nav">
+                <input type="checkbox" id="check"/>
+                <label for="check">
+                     <a id="btn">&#9776;</a>
+                     <a id="cancel">&#10799;</a>
+                </label>
+                <img class="resp"src="../public/img/logo.png" alt="logo" >
+                 <div class="sidebar">
+                     
+                    <div class="menu">
+                        <img src="../public/img/logo.png" alt="logo">
+                        <div class="menu1">
+                            <a  class="home" href=""> Home </a>
+                            <a  href="#about"> About-Us </a>
+                            <a  href="#contact"> Contact </a>
+                            <input type="button" value="Se connecter" class="btnConnexion">
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            
+        <form method="POST" action="Location.hbs" id="validation" >
+            <fieldset id="f1">
+                <h2> Formulaire d'inscription :</h2>
+                <p style="text-align: center; color:purple"> (Inscris-toi pour recevoir toutes les nouvelles) </p>
+                <table>
+                    <tr> <td> <label for="nom"> Nom : </label></td> <td> <input type="text" id="nom" name="nom"> </td><td><span  id="1"></span> </td></tr> 
+                  
+                    <tr> <td> <label for="prenom"> Prénom : </label></td> <td><input type="text" name="prenom" id="prenom"></td><td><span  id="2"></span></td></tr> 
+
+                    <tr> <td><label for="age"> Age : </label> </td><td><input type="number" name="age" id="age"></td><td>  <span  id="3"></span></td></tr>
+                    
+                    <tr><td><label for="tel"> Tel : </label> </td> <td><input type="text" name="tel" id="tel"></td><td> <span  id="5"></span> </td></tr> 
+                    
+                    <tr><td><label for="email"> Email : </label></td> <td> <input type="text" name="email" id="email"></td><td> <span  id="4"></span></td></tr>
+                    
+                    <tr> <td><label for="mdp"> Password : </label></td> <td> <input type="password" name="mdp" id="mdp"> </td><td> <span id="6"></span></td></tr> 
+                   
+                    <tr><td><label for="cmdp"> Confirmation : </label> </td> <td><input type="password" id="cmdp"></td> <td><span  id="7"></span> </td></tr>
+                    
+                </table> 
+                <input type="submit"  class="btn close" value="S'inscrire" > 
+                <input type="button"  class="btn annuler" value="Annuler" onclick="Annuler()"> 
+                
+            </fieldset>
+        </form>
+
+        <form method="post" action="LOGIN" id="connexion" >
+            <fieldset id="f1">
+                <p> <img src="../public/img/cnx.jpg" alt="user"> </p>
+                <table>
+                    <tr> <td> <label for="email"> Email : </label></td> <td> <input type="text" id="email" name="email" required> </td></tr> 
+                  
+                    <tr> <td> <label for="password"> Password : </label></td> <td><input type="password" name="mdp" id="password" required></td></tr>
+
+                    <tr> <td colspan="2"> <a class="lien" onclick="inscription()"> Pas encore inscris? Inscris-toi maintement! </a></td></tr>
+                </table>
+                <input type="submit"  class="btn close" value="Connexion" > 
+                <input type="button"  class="btn annuler" value="Annuler" onclick="Annuler()"> 
+                
+            </fieldset>
+        </form>
+
+
+        <!-- Code script -->
+        <script>
+            var btnCnx = document.getElementsByClassName("btnConnexion")[0];
+            var btnValider = document.getElementsByClassName("close")[0];
+            var modal = document.getElementById("validation");
+            var connexion= document.getElementById("connexion");
+            var nom =document.getElementById('nom');
+            var prenom =document.getElementById('prenom');
+            var email =document.getElementById('email');
+            var password =document.getElementById('mdp');
+            var confirmation =document.getElementById('cmdp');
+            var tel =document.getElementById('tel');
+            var cpt=0;
+
+            function inscription() {
+                modal.style.display = "block";
+                connexion.style.display = "none";
+            }
+
+            btnCnx.onclick = function() {
+                connexion.style.display = "block";
+            }
+
+            function Valider(){
+                cpt=0;
+                var rgxEmail =/^[A-Za-z0-9-_.]+@[A-Za-z]{4,9}.[A-Za-z]{2,3}$/;
+                var rgx=/^[0][5-7-6][0-9]{8}$/;
+                if(nom.value=="" ) document.getElementById('1').innerHTML= "Remplir le nom "; 
+                else {
+                    document.getElementById('1').innerHTML=" ";
+                    cpt++;
+                }
+                if( prenom.value=="" ) document.getElementById('2').innerHTML= "Remplir le prénom "; 
+                else {
+                    document.getElementById('2').innerHTML=" ";
+                    cpt++;
+                }
+                if( age.value=="" ) document.getElementById('3').innerHTML= "Remplir l'âge "; 
+                else {
+                    document.getElementById('3').innerHTML=" ";
+                    cpt++;
+                }
+                if( email.value=="" ) document.getElementById('4').innerHTML= "Remplir l'email "; 
+                else if(!rgxEmail.test(email.value)) document.getElementById('4').innerHTML = "Format incorrect";
+                else {
+                    document.getElementById('4').innerHTML=" ";
+                    cpt++;
+                }
+                if( tel.value=="" ) document.getElementById('5').innerHTML = "Remplir le numéro ";
+                else if(!rgx.test(tel.value)) document.getElementById('5').innerHTML="tel incorrect";
+                else {
+                    document.getElementById('5').innerHTML=" ";
+                    cpt++;
+                }
+                if( password.value=="" ) document.getElementById('6').innerHTML= "Remplir le mdp";
+                else {
+                    document.getElementById('6').innerHTML=" ";
+                    cpt++;
+                }
+                if( confirmation.value=="" ) document.getElementById('7').innerHTML= "Remplir la confirmation";
+                if(password.value != confirmation.value) document.getElementById('7').innerHTML="Confirmation incorrecte";   
+                else {
+                    document.getElementById('7').innerHTML=" ";
+                    cpt++;
+                }
+                return cpt;    
+            }
+            
+            function Valider2(){
+            console.log(cpt);
+                if(cpt==7)
+                {
+                modal.style.display = "none";
+                alert('Inscription bien effectuée !');
+                nom.value="";
+                        prenom.value="";
+                        age.value="";
+                        tel.value="";
+                        email.value="";
+                        password.value="";
+                        confirmation.value="";
+                }
+            }
+            
+            function Annuler(){
+                modal.style.display = "none";
+                connexion.style.display="none"
+            }
+
+        </script>
+        <!-- Fin script -->
+        <div class="Part1">
+            <div class="parag1">
+                <h2> Enjoy your dream vacation  </h2>
+                <p>Profitez de vos vacances pour vous octroyer une pause de détente et de confort !</p>
+                <p style="border-radius:15px;margin-top:20px; font-weight:bold; font-size:24px; background-color:red; padding:15px; background-color:rgba(0, 0, 0, 0.5);"> 
+                    Bienvenue !! Inscris-toi ou connectes-toi si t'es déja un membre pour réserver x)</p>
+            </div>
+        </div>
+    </header> 
+        <div class="espace">
+            
+        </div>
+        <nav id="about"> 
+            <div class="parags">
+                <div class="def">
+                    <h1> Qui sommes nous ? </h1>
+                    <p> <b> Vacancy Home </b> est une agence de location de maisons de vacances.
+                        Ici vous pouvez réservez une maison de vacances rien que pour vous ! 
+                        Sur notre site, découvrez plus de 50.000 maisons individuelles, villas avec piscine privée, gîtes 
+                        et chalets à louer pour vos vacances et séjours.
+                    </p>
+                </div>
+                <div class="choix">
+                    <h1> Pourquoi nous choisir ? </h1>
+                    <p> Nous vous offrons une diversité de destinations avec une meilleure qualité, et surtout avec un prix convenable.
+                        Notre agence est ouverte chaque jour 24h/7 juste pour vous. Soyez les bienvenus !
+                    </p>
+                </div>
+            </div>
+            <div class="espace">
+
+            </div>
+            <div class="destinations">
+                <h1> Parmis nos meilleures destinations :</h1>
+                <div class="images">
+                    <div class="image1">  <p class="descr1"> Hawaï</p> </div>
+                    <div class="image2">  <p class="descr2"> Turquie </p></div>
+                    <div class="image3">  <p class="descr3"> Maroc </p></div>
+                    <div class="image4">  <p class="descr4"> Italie </p></div>
+                </div>
+            </div>
+            <div class="espace">
+            
+            </div>
+            <div class="espace"></div>
+
+            <h1 id="contact"> Contactez-nous </h1>
+            <div class="contact">
+                <div class="sm">
+                        <div> <img src="../public/img/fb.png" alt="fb" class="fb"> </div>
+                        <div> Vacancy Home </div>
+                </div>
+                <div class="sm">
+                        <div> <img src="../public/img/email.png" alt="email"> </div>
+                        <div> Vacancy_Home@gmail.com </div>
+                </div>
+                <div class="sm">
+                        <div> <img src="../public/img/twitter.png" alt="twitter"> </div>
+                        <div> Vacancy Home</div>
+                </div>
+                <div class="sm">
+                        <div> <img src="../public/img/loc.png" class="loc" alt="loc"> </div>
+                        <div> 515 Agency, 803 10 Ave, Cold Lake, AB T9M 1H8, Canada </div>
+                </div>
+                <div class="sm">
+                        <div> <img src="../public/img/phone.png" alt="phone"> </div>
+                        <div class="phone"> +6 12345678</div>
+                </div>
+            </div>
+
+        </nav>
+        <div class="espace">
+        
+        </div>
+
+
+        <footer>
+            <div class="footer1">
+                    <div class="block">  
+                            <img src="../public/img/logo2.png" class="logo" alt="logo">
+                            <p> Suivez-nous sur les réseaux sociaux</p>
+                            <a><img id="facebook" src="../public/img/facebook.png" alt="facebook" ></a>
+                            <a ><img src="../public/img/twitt.png" alt="twitter" ></a>
+                            <a><img src="../public/img/linkedin-in.png" alt="linkedin" ></a>
+                    </div>
+                    <div class="block"> 
+                            <strong>QUICK LINKS</strong>
+                            <p>HOME</p>
+                            <p>ABOUT US</p>
+                            <p>CITY GUIDE</p>
+                            <p>BLOG</p>
+                            <p>FAQ's</p>
+                    </div>
+                    <div class="block">
+                            <strong>CONTACT US</strong>
+                            <p>Feel free to get in touch with us via phone or send<br> us a message</p>
+                            <div class="contact">
+                            <p><strong>Vacancy_home@gmail.com</strong></p>
+                            </div>
+                    </div>
+            </div> 
+            <div class="copy"> 
+                <p> @Copyright 2019. All Right Reserved </p >
+            </div>      
+        </footer>
+
+</body>
+</html>
