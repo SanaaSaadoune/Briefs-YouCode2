@@ -5,72 +5,6 @@
 create database Gestion_Commandes
 use Gestion_Commandes
 
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('Client') and o.name = 'FK_CLIENT_COMMANDER_COMMANDE')
-alter table Client
-   drop constraint FK_CLIENT_COMMANDER_COMMANDE
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('Contenir') and o.name = 'FK_CONTENIR_CONTENIR_ARTICLE')
-alter table Contenir
-   drop constraint FK_CONTENIR_CONTENIR_ARTICLE
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('Contenir') and o.name = 'FK_CONTENIR_CONTENIR_COMMANDE')
-alter table Contenir
-   drop constraint FK_CONTENIR_CONTENIR_COMMANDE
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('Article')
-            and   type = 'U')
-   drop table Article
-go
-
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('Client')
-            and   name  = 'COMMANDER_FK'
-            and   indid > 0
-            and   indid < 255)
-   drop index Client.COMMANDER_FK
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('Client')
-            and   type = 'U')
-   drop table Client
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('Commande')
-            and   type = 'U')
-   drop table Commande
-go
-
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('Contenir')
-            and   name  = 'CONTENIR_FK'
-            and   indid > 0
-            and   indid < 255)
-   drop index Contenir.CONTENIR_FK
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('Contenir')
-            and   type = 'U')
-   drop table Contenir
-go
 
 /*==============================================================*/
 /* Table : Article                                              */
@@ -153,6 +87,27 @@ go
 
 
 
+
+
+
+
+
+/* Les questions du brief 08 */
+
+
+/* Création des utilisateurs et leur attribuer des droits spécifiés. */
+
+create login Sanaa with password='12345'
+
+create USER Admin1  for LOGIN Sanaa
+create USER Client1  without LOGIN 
+
+grant select,delete,alter on Article to Admin1
+grant select,delete,alter on Client to Admin1
+grant select,delete,alter on Commande to Admin1
+
+grant alter on Client to Client1
+grant select on Article to Client1
 
 
 
