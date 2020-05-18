@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // si la methode de la formulaire es
 <form class="login"  method="POST">
     <h4 class="text-center"> Login</h4>
     <input class="form-control" type="text" name="user" placeholder="Username" autocomplete="off">
-    <input class="form-control" type="text" name="pass" placeholder="Password" autocomplete="new-password">
+    <input class="form-control" type="password" name="pass" placeholder="Password" autocomplete="new-password">
     <input type="submit" class="btn btn-primary btn-block" value="login">
     <a href="sign-up.php">S'inscrire sur notre site</a>
 </form>
