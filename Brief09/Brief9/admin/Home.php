@@ -23,13 +23,13 @@
                   <a class="nav-link" style="color: #EBBE2A;" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" style="color: white;" href="#">Services</a>
+                  <a class="nav-link" style="color: white;" href="#Services">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: white;" href="#">About-Us</a>
+                    <a class="nav-link" style="color: white;" href="#AboutUs">About-Us</a>
                   </li>
                 <li class="nav-item">
-                  <a class="nav-link" style="color: white;" href="#">Contact</a>
+                  <a class="nav-link" style="color: white;" href="#Contact">Contact</a>
                 </li>
               </ul>
               <span class="navbar-text">
@@ -46,7 +46,7 @@
                     <div class="slide active" style="background-image: url('./layout/Image/supermarket.jpg')">
                         <div class="container">
                             <div class="caption">
-                                <h1>Bienvenue dans Health&Food  </h1>
+                                <h1 >Bienvenue dans Health&Food  </h1>
                                 <p>Plus de 1000 produits </p>
                                 <a href="">Commandes maintenant !</a>
                             </div>
@@ -105,7 +105,7 @@
 
     <div class="espace"></div>
     <div class="description">
-        <h2>A propos de nous </h2>
+        <h2 id="AboutUs">A propos de nous </h2>
         <hr><br>
         <p> Faire ses courses n'est plus un sujet de préoccupation! <br><b>Food&Health</b> vous donne la possibilité de faire vos courses en ligne. De notre temps, 
             une simple visite aux hypermarchés est devenue un véritable défi quand on est pressé par le temps. Plus besoin de faire un long trajet pour 
@@ -118,7 +118,7 @@
 
 
     <div class="commande">
-        <h2>Notre service </h2>
+        <h2 id="Services">Notre service </h2>
         <hr><br>
         <div class="commander">
             <div class="part">
@@ -194,7 +194,7 @@
     <div class="espace"></div>
     <div class="espace"></div>
 
-    <footer>
+    <footer id="Contact">
         <div class="block">
                 <div class="block1">  
                         <img src="./layout/Image/logo.png" alt="logo">
@@ -247,6 +247,6 @@
     </footer>
 
 
-    <script src="../js/script.js"></script>
+    <script src="./layout/js/script.js"></script>
 </body>
 </html>

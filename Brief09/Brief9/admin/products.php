@@ -39,7 +39,9 @@ if (isset($_SESSION['username']) || isset($_SESSION['user'])) {
                             </div>
                         </div>
                     </div>
-                    <a href="" class="btn btn-success"> <input style="height:15px;width:40px;padding:6px;" type="checkbox" name="produit" id="<?php echo $row['id']?>" >Ajouter au panier</a>
+                    <a class="btn btn-success" style="color:white;"> 
+                        <input style="height:15px;width:40px;padding:6px;" type="checkbox" name="produit" id="<?php echo $row['id']?>" > Ajouter au panier
+                    </a>
                 </div>
             <?php } ?>
         </div>
@@ -50,20 +52,10 @@ if (isset($_SESSION['username']) || isset($_SESSION['user'])) {
 
         <br><br>
 
-        
-
-
-            
-        <!-- <div class="col-sm-4" style="margin:auto;text-align:center;">
-            <ul class="list-group">
-                <li > </li>
-            </ul>
-        </div> -->
-
-        <p id ="quantite" style="text-align:center; color:red; font-weight:bold;"> </p>
+        <p id ="Totalprix" style="text-align:center; color:red; font-weight:bold;"> </p>
         <br> 
 
-        <!-- Button trigger modal -->
+        <!-- Button confirmer Modal -->
         <p style="text-align:center; display:none;"  id="confirmer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
         Confirmer
         </button></p>
@@ -81,7 +73,7 @@ if (isset($_SESSION['username']) || isset($_SESSION['user'])) {
                 </div>
                 <div class="modal-body">
                     <span class="form-control" id="nom" disabled><?php echo $_SESSION['username'] ?></span><br>
-                    <input type="text" id="FormPrix" name="prixTotal" class="form-control"><br> 
+                    <input type="text" id="FormPrix" name="prixTotal" class="form-control" disabled><br> 
                     <input type="text" class="form-control" name="CIN" id="CIN" placeholder="Entrez votre CIN"> <br>
 
                     <select class="form-control" id="methodeP" name="methodeP">
@@ -126,24 +118,17 @@ if (isset($_SESSION['username']) || isset($_SESSION['user'])) {
                     echo "Demande effectuée !";
                 ?> 
                 </p>
-                <?php
-                
-    }
-            
-        
-    ?>
+                <?php    
+        }    
+        ?>
 
-
-
-
-<?php
-
-    } 
-    include $tplDirName . "footer.php";
-} else {
-    header('location: index.php');
-}
-?>
+        <?php
+        } 
+          include $tplDirName . "footer.php";
+        } else {
+            header('location: index.php');
+        }
+        ?>
 
 
 
@@ -154,7 +139,7 @@ if (isset($_SESSION['username']) || isset($_SESSION['user'])) {
                 var produitSelect =[];
                 var j=0;
                 var prix = document.getElementsByClassName('Prix');
-                var quantite = document.getElementById('quantite');
+                var Totalprix = document.getElementById('Totalprix');
                 var Somme=0;
                 var select = document.getElementById('methodeP');
 
@@ -167,13 +152,11 @@ if (isset($_SESSION['username']) || isset($_SESSION['user'])) {
                         Somme += Number(prix[i].innerHTML);   
                     }
                 }
-                // alert(produitSelect);
-                // alert("Total prix = " +Somme);
-                quantite.innerText = "Le prix total est : "+ Somme + "DHS";
+                Totalprix.innerText = "Le prix total est : "+ Somme + "DHS";
                 document.getElementById("confirmer").style.display = "block";
                 document.getElementById('FormPrix').innerText += Somme +" DHS";
                 document.getElementById('FormPrix').value= Somme;
-                quantite.value= Somme;
+                Totalprix.value= Somme;
 
                 document.getElementById('methodeP').addEventListener('change', function (e) {
                 if (e.target.value === "CarteBanquaire") {
