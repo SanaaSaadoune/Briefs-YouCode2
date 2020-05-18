@@ -2494,7 +2494,7 @@ Shadow=0</a:DisplayPreferences>
 <o:AssociationSymbol Id="o6">
 <a:CreationDate>1589033579</a:CreationDate>
 <a:ModificationDate>1589033579</a:ModificationDate>
-<a:Rect>((-1350,14126), (11100,23850))</a:Rect>
+<a:Rect>((-1387,14126), (11100,23850))</a:Rect>
 <a:ListOfPoints>((-1350,23850),(-1350,15300),(11100,15300))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -2515,7 +2515,7 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o10">
 <a:CreationDate>1589033585</a:CreationDate>
 <a:ModificationDate>1589033933</a:ModificationDate>
-<a:Rect>((-19485,14775), (-6451,24000))</a:Rect>
+<a:Rect>((-19485,14775), (-6488,24000))</a:Rect>
 <a:ListOfPoints>((-8475,24000),(-8475,14775),(-19485,14775))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -2536,7 +2536,7 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o13">
 <a:CreationDate>1589033608</a:CreationDate>
 <a:ModificationDate>1589033933</a:ModificationDate>
-<a:Rect>((-14731,-2925), (-10833,9225))</a:Rect>
+<a:Rect>((-14694,-2925), (-10870,9225))</a:Rect>
 <a:ListOfPoints>((-12857,9225),(-12857,-2925))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -2578,7 +2578,7 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o19">
 <a:CreationDate>1589035337</a:CreationDate>
 <a:ModificationDate>1589035337</a:ModificationDate>
-<a:Rect>((7394,93), (11442,10218))</a:Rect>
+<a:Rect>((7431,93), (11405,10218))</a:Rect>
 <a:ListOfPoints>((9418,93),(9418,10218))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -3156,7 +3156,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Creator>admin</a:Creator>
 <a:ModificationDate>1589035484</a:ModificationDate>
 <a:Modifier>admin</a:Modifier>
-<a:TargetModelURL>file:///C|/Users/admin/Desktop/nv brief 9/ModeleOrienteObjet_1.mpd</a:TargetModelURL>
+<a:TargetModelURL>file:///C|/Users/admin/Desktop/Brief09/ModeleOrienteObjet_1.mpd</a:TargetModelURL>
 <a:TargetModelID>0A583F4A-85E6-4099-A4FF-2C844F4AD3A5</a:TargetModelID>
 <a:TargetModelClassID>CDE44E21-9669-11D1-9914-006097355D9B</a:TargetModelClassID>
 <c:SessionShortcuts>

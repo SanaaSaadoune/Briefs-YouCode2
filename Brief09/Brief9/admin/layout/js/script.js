@@ -1,3 +1,4 @@
+//Animation slide
 const slides=document.querySelector(".slider").children;
 const prev=document.querySelector(".prev");
 const next=document.querySelector(".next");
@@ -47,3 +48,6 @@ function autoPlay(){
 }
 
 let timer= setInterval(autoPlay,4000);
+
+
+

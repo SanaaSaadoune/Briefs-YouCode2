@@ -4,14 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="../style/Home.css">
+    <link rel="stylesheet" href="./layout/style/Home.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <div class="menu"></div>
+        <nav class="navbar navbar-expand-lg navbar-light style=background-color:#cacaca">
+            <img src="./layout/Image/logo.png">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" style="color: #EBBE2A;" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" style="color: white;" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="#">About-Us</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" style="color: white;" href="#">Contact</a>
+                </li>
+              </ul>
+              <span class="navbar-text">
+                <a  href="index.php"><button class="btnConnexion"> Se connecter </button></a>
+              </span>
+            </div>
+          </nav>
+
+
+
+
             <div class="home">
                 <div class="slider">
-                    <div class="slide active" style="background-image: url('../Images/supermarket.jpg')">
+                    <div class="slide active" style="background-image: url('./layout/Image/supermarket.jpg')">
                         <div class="container">
                             <div class="caption">
                                 <h1>Bienvenue dans Health&Food  </h1>
@@ -21,7 +53,7 @@
                         </div>
                     </div>
 
-                    <div class="slide" style="background-image: url('../Images/LEGUMES.jpg')">
+                    <div class="slide" style="background-image: url('./layout/Image/LEGUMES.jpg')">
                         <div class="container">
                             <div class="caption">
                                 <h1> Perte de temps en faisant les courses?</h1>
@@ -31,7 +63,7 @@
                         </div>
                     </div>
                     
-                    <div class="slide" style="background-image: url('../Images/fruit.jpg')">
+                    <div class="slide" style="background-image: url('./layout/Image/fruit.jpg')">
                         <div class="container">
                             <div class="caption">
                                 <h1>Des produits 100% naturels</h1>
@@ -41,7 +73,7 @@
                         </div>
                     </div>
                     
-                    <div class="slide" style="background-image: url('../Images/market.jpg')">
+                    <div class="slide" style="background-image: url('./layout/Image/market.jpg')">
                         <div class="container">
                             <div class="caption">
                                 <h1> Des offres et des promotions pour vous! </h1>
@@ -51,7 +83,7 @@
                         </div>
                     </div>
 
-                    <div class="slide" style="background-image: url('../Images/achat.jpg')">
+                    <div class="slide" style="background-image: url('./layout/Image/achat.jpg')">
                         <div class="container">
                             <div class="caption">
                                 <h1> Nous sommes toujours à votre disposition </h1>
@@ -68,6 +100,8 @@
                 </div>
             </div>
     </header>
+
+     
 
     <div class="espace"></div>
     <div class="description">
@@ -98,7 +132,7 @@
                     <button > Commandes maintenant !</button>
                 </p>
             </div>
-            <div  class="part"><img src="../Images/delivreur.svg" alt="market"></div>
+            <div  class="part"><img src="./layout/Image/delivreur.svg" alt="market"></div>
         </div>
     </div>
 
@@ -157,17 +191,17 @@
             </div>
         </div>
     </div>
-    <<div class="espace"></div>
+    <div class="espace"></div>
     <div class="espace"></div>
 
     <footer>
         <div class="block">
                 <div class="block1">  
-                        <img src="../Images/logo.png" alt="logo">
+                        <img src="./layout/Image/logo.png" alt="logo">
                         <p> Suivez-nous sur les réseaux sociaux</p>
-                        <a><img style="cursor: pointer;" id="facebook" src="../Images/facebook.png" alt="facebook" ></a>
-                        <a ><img style="cursor: pointer;" src="../Images/twitter.png" alt="twitter" ></a>
-                        <a><img style="cursor: pointer;" src="../Images/linkedin-in.png" alt="linkedin" ></a>
+                        <a><img style="cursor: pointer;" id="facebook" src="./layout/Image/facebook.png" alt="facebook" ></a>
+                        <a ><img style="cursor: pointer;" src="./layout/Image/twitter.png" alt="twitter" ></a>
+                        <a><img style="cursor: pointer;" src="./layout/Image/linkedin-in.png" alt="linkedin" ></a>
                 </div>
 
                 <div class="block1"> 
@@ -199,14 +233,14 @@
         </div>
 
         <div class="footer2">
-                <img id="logo" src="../Images/logo.png" alt="logo"><br>
+                <img id="logo" src="./layout/Image/logo.png" alt="logo"><br>
                 <p>CONTACT US</p>
                 <strong>+1 800 123 1234</strong><br>
                 <strong>Food-health@website.com</strong>
                 <p> Suivez-nous sur les réseaux sociaux</p>
-                <a ><img id="facebook" src="../Images/facebook.png" alt="facebook" ></a>
-                <a ><img src="../Images/twitter.png" alt="twitter" ></a>
-                <a><img src="../Images/linkedin-in.png" alt="linkedin" ></a>
+                <a ><img id="facebook" src="./layout/Image/facebook.png" alt="facebook" ></a>
+                <a ><img src="./layout/Image/twitter.png" alt="twitter" ></a>
+                <a><img src="./layout/Image/linkedin-in.png" alt="linkedin" ></a>
                 <p>@Copyright 2020</p>
                 <p> All Right Reserved</p>
         </div>
@@ -214,6 +248,5 @@
 
 
     <script src="../js/script.js"></script>
-
 </body>
 </html>

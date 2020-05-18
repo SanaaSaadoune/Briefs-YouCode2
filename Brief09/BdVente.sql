@@ -1,248 +1,105 @@
-/*==============================================================*/
-/* Nom de SGBD :  Microsoft SQL Server 2008                     */
-/* Date de cr�ation :  09/05/2020 14:44:24                      */
-/*==============================================================*/
+-- phpMyAdmin SQL Dump
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  jeu. 14 mai 2020 à 00:52
+-- Version du serveur :  5.7.26
+-- Version de PHP :  7.2.18
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
 
 
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('Client') and o.name = 'FK_CLIENT_ASSOCIATI_ADMIN')
-alter table Client
-   drop constraint FK_CLIENT_ASSOCIATI_ADMIN
-go
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('Commande') and o.name = 'FK_COMMANDE_ASSOCIATI_CLIENT')
-alter table Commande
-   drop constraint FK_COMMANDE_ASSOCIATI_CLIENT
-go
+--
+-- Base de données :  `bdvente`
+--
 
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('Ligne_Commande') and o.name = 'FK_LIGNE_CO_ASSOCIATI_COMMANDE')
-alter table Ligne_Commande
-   drop constraint FK_LIGNE_CO_ASSOCIATI_COMMANDE
-go
+-- --------------------------------------------------------
 
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('Ligne_Commande') and o.name = 'FK_LIGNE_CO_ASSOCIATI_PRODUIT')
-alter table Ligne_Commande
-   drop constraint FK_LIGNE_CO_ASSOCIATI_PRODUIT
-go
+--
+-- Structure de la table `admin1`
+--
 
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('Produit') and o.name = 'FK_PRODUIT_ASSOCIATI_ADMIN')
-alter table Produit
-   drop constraint FK_PRODUIT_ASSOCIATI_ADMIN
-go
+DROP TABLE IF EXISTS `admin1`;
+CREATE TABLE IF NOT EXISTS `admin1` (
+  `Id_Ad` int(11) NOT NULL,
+  `Email_Ad` varchar(50) NOT NULL,
+  `Password_Ad` varchar(50) NOT NULL,
+  `CIN_Ad` int(10) NOT NULL,
+  PRIMARY KEY (`Id_Ad`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('Admin')
-            and   type = 'U')
-   drop table Admin
-go
+-- --------------------------------------------------------
 
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('Client')
-            and   name  = 'ASSOCIATION_2_FK'
-            and   indid > 0
-            and   indid < 255)
-   drop index Client.ASSOCIATION_2_FK
-go
+--
+-- Structure de la table `client`
+--
 
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('Client')
-            and   type = 'U')
-   drop table Client
-go
+DROP TABLE IF EXISTS `client`;
+CREATE TABLE IF NOT EXISTS `client` (
+  `CIN_Cl` varchar(10) NOT NULL,
+  `Nom_Cl` varchar(30) NOT NULL,
+  `Prenom_Cl` varchar(30) NOT NULL,
+  `Email_Cl` varchar(80) NOT NULL,
+  `Password_Cl` varchar(50) NOT NULL,
+  PRIMARY KEY (`CIN_Cl`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('Commande')
-            and   name  = 'ASSOCIATION_3_FK'
-            and   indid > 0
-            and   indid < 255)
-   drop index Commande.ASSOCIATION_3_FK
-go
+-- --------------------------------------------------------
 
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('Commande')
-            and   type = 'U')
-   drop table Commande
-go
+--
+-- Structure de la table `commande`
+--
 
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('Ligne_Commande')
-            and   name  = 'ASSOCIATION_5_FK'
-            and   indid > 0
-            and   indid < 255)
-   drop index Ligne_Commande.ASSOCIATION_5_FK
-go
+DROP TABLE IF EXISTS `commande`;
+CREATE TABLE IF NOT EXISTS `commande` (
+  `Id_Cmd` int(11) NOT NULL AUTO_INCREMENT,
+  `Date_Cmd` date NOT NULL,
+  `CIN_Cl` varchar(10) NOT NULL,
+  PRIMARY KEY (`Id_Cmd`),
+  KEY `CIN_Cl` (`CIN_Cl`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('Ligne_Commande')
-            and   name  = 'ASSOCIATION_4_FK'
-            and   indid > 0
-            and   indid < 255)
-   drop index Ligne_Commande.ASSOCIATION_4_FK
-go
+-- --------------------------------------------------------
 
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('Ligne_Commande')
-            and   type = 'U')
-   drop table Ligne_Commande
-go
+--
+-- Structure de la table `ligne_commande`
+--
 
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('Produit')
-            and   name  = 'ASSOCIATION_1_FK'
-            and   indid > 0
-            and   indid < 255)
-   drop index Produit.ASSOCIATION_1_FK
-go
+DROP TABLE IF EXISTS `ligne_commande`;
+CREATE TABLE IF NOT EXISTS `ligne_commande` (
+  `Id_Cmd` int(11) NOT NULL,
+  `Id_Prod` int(11) NOT NULL,
+  `Quantite` int(11) NOT NULL,
+  KEY `Id_Cmd` (`Id_Cmd`),
+  KEY `Id_Prod` (`Id_Prod`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('Produit')
-            and   type = 'U')
-   drop table Produit
-go
+-- --------------------------------------------------------
 
-/*==============================================================*/
-/* Table : Admin                                                */
-/*==============================================================*/
-create table Admin (
-   Id_Ad                int                  not null,
-   Email_Ad             varchar(254)         null,
-   Password_Ad          varchar(254)         null,
-   CIN_Ad               varchar(254)         null,
-   constraint PK_ADMIN primary key nonclustered (Id_Ad)
-)
-go
+--
+-- Structure de la table `produit`
+--
 
-/*==============================================================*/
-/* Table : Client                                               */
-/*==============================================================*/
-create table Client (
-   CIN_Cl               varchar(254)         not null,
-   Id_Ad                int                  not null,
-   Nom_Cl               varchar(254)         null,
-   Prenom_Cl            varchar(254)         null,
-   Email_Cl             varchar(254)         null,
-   Password_Cl          varchar(254)         null,
-   constraint PK_CLIENT primary key nonclustered (CIN_Cl)
-)
-go
+DROP TABLE IF EXISTS `produit`;
+CREATE TABLE IF NOT EXISTS `produit` (
+  `Id_Prod` int(11) NOT NULL AUTO_INCREMENT,
+  `Nom_Prod` varchar(30) NOT NULL,
+  `Prix_Prod` float NOT NULL,
+  `Quantite_Prod` int(11) NOT NULL,
+  `Categorie` varchar(30) NOT NULL,
+  PRIMARY KEY (`Id_Prod`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+COMMIT;
 
-/*==============================================================*/
-/* Index : ASSOCIATION_2_FK                                     */
-/*==============================================================*/
-create index ASSOCIATION_2_FK on Client (
-Id_Ad ASC
-)
-go
-
-/*==============================================================*/
-/* Table : Commande                                             */
-/*==============================================================*/
-create table Commande (
-   Id_Cmd               int                  not null,
-   CIN_Cl               varchar(254)         not null,
-   Date_Cmd             datetime             null,
-   Etat_Cmd             bit                  null,
-   constraint PK_COMMANDE primary key nonclustered (Id_Cmd)
-)
-go
-
-/*==============================================================*/
-/* Index : ASSOCIATION_3_FK                                     */
-/*==============================================================*/
-create index ASSOCIATION_3_FK on Commande (
-CIN_Cl ASC
-)
-go
-
-/*==============================================================*/
-/* Table : Ligne_Commande                                       */
-/*==============================================================*/
-create table Ligne_Commande (
-   Id_Cmd               int                  not null,
-   Id_Prod              int                  not null,
-   Quantite             int                  null
-)
-go
-
-/*==============================================================*/
-/* Index : ASSOCIATION_4_FK                                     */
-/*==============================================================*/
-create index ASSOCIATION_4_FK on Ligne_Commande (
-Id_Cmd ASC
-)
-go
-
-/*==============================================================*/
-/* Index : ASSOCIATION_5_FK                                     */
-/*==============================================================*/
-create index ASSOCIATION_5_FK on Ligne_Commande (
-Id_Prod ASC
-)
-go
-
-/*==============================================================*/
-/* Table : Produit                                              */
-/*==============================================================*/
-create table Produit (
-   Id_Prod              int                  not null,
-   Id_Ad                int                  not null,
-   Nom_Prod             varchar(254)         null,
-   Prix_Prod            float                null,
-   Quantite_Prod        int                  null,
-   Categorie            varchar(254)         null,
-   constraint PK_PRODUIT primary key nonclustered (Id_Prod)
-)
-go
-
-/*==============================================================*/
-/* Index : ASSOCIATION_1_FK                                     */
-/*==============================================================*/
-create index ASSOCIATION_1_FK on Produit (
-Id_Ad ASC
-)
-go
-
-alter table Client
-   add constraint FK_CLIENT_ASSOCIATI_ADMIN foreign key (Id_Ad)
-      references Admin (Id_Ad)
-go
-
-alter table Commande
-   add constraint FK_COMMANDE_ASSOCIATI_CLIENT foreign key (CIN_Cl)
-      references Client (CIN_Cl)
-go
-
-alter table Ligne_Commande
-   add constraint FK_LIGNE_CO_ASSOCIATI_COMMANDE foreign key (Id_Cmd)
-      references Commande (Id_Cmd)
-go
-
-alter table Ligne_Commande
-   add constraint FK_LIGNE_CO_ASSOCIATI_PRODUIT foreign key (Id_Prod)
-      references Produit (Id_Prod)
-go
-
-alter table Produit
-   add constraint FK_PRODUIT_ASSOCIATI_ADMIN foreign key (Id_Ad)
-      references Admin (Id_Ad)
-go
-
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,6 +1,23 @@
 
 $color :#EBBE2A;
 $bgColor :#cacaca;
+
+$body-bg: #c1bdba;
+$form-bg: #000000;
+$white: #ffffff;
+
+$main: #EBBE2A;
+$main-light: lighten($main,5%);
+$main-dark: darken($main,5%);
+
+$gray-light: #a0b3b0;
+$gray: #ddd;
+
+$thin: 300;
+$normal: 400;
+$bold: 600;
+$br: 4px;
+
 *{
     margin: 0;
     padding: 0;
@@ -11,9 +28,34 @@ body{
     overflow-x: hidden;
     height: 100%;
         header{
-            .menu{
-                height: 80px;
-                background-color: $color;
+            nav{
+                background-color: black;
+                .navbar-toggler{
+                    color: white;
+                    background-color: white;
+                }
+                .btnConnexion{
+                    width: 200px;
+                    height: 40px;
+                    background-color: $color;
+                    color:white;
+                    border-radius: 20px;
+                    border-style: none;
+                    font-size: 22px;
+                    &:hover{
+                        cursor: pointer;
+                        background-color:$bgColor;
+                        color: $color;
+                    }  
+                }
+                ul li a {
+                    font-size:20px;
+                    margin-left: 100px;
+                    &:hover{
+                        color:$color;
+                        background-color: $bgColor;
+                    }
+                }
             }
         }
         .espace{
@@ -332,9 +374,9 @@ body{
     }
 
     .copy{
-        height: 20px;
+        height: 50px;
         background-color: $color;
-        padding: 5px;
+        padding: 15px;
     }
 
     .p{
@@ -364,6 +406,13 @@ body{
 
 @media only screen and (max-width: 1200px){
 
+    header{
+        nav{
+            .nav-link{
+                margin-left: 0px;
+            }
+        }
+    }
     .commande{
         .commander{
             flex-direction: column;

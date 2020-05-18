@@ -10,9 +10,39 @@ body {
   height: 100%;
 }
 
-body header .menu {
-  height: 80px;
+body header nav {
+  background-color: black;
+}
+
+body header nav .navbar-toggler {
+  color: white;
+  background-color: white;
+}
+
+body header nav .btnConnexion {
+  width: 200px;
+  height: 40px;
   background-color: #EBBE2A;
+  color: white;
+  border-radius: 20px;
+  border-style: none;
+  font-size: 22px;
+}
+
+body header nav .btnConnexion:hover {
+  cursor: pointer;
+  background-color: #cacaca;
+  color: #EBBE2A;
+}
+
+body header nav ul li a {
+  font-size: 20px;
+  margin-left: 100px;
+}
+
+body header nav ul li a:hover {
+  color: #EBBE2A;
+  background-color: #cacaca;
 }
 
 body .espace {
@@ -431,9 +461,9 @@ a img {
 }
 
 .copy {
-  height: 20px;
+  height: 50px;
   background-color: #EBBE2A;
-  padding: 5px;
+  padding: 15px;
 }
 
 .p {
@@ -465,6 +495,9 @@ a img {
 }
 
 @media only screen and (max-width: 1200px) {
+  header nav .nav-link {
+    margin-left: 0px;
+  }
   .commande .commander {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
