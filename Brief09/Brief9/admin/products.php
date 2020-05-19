@@ -72,7 +72,7 @@ if (isset($_SESSION['username']) || isset($_SESSION['user'])) {
                     </button>
                 </div>
                 <div class="modal-body">
-                    <span class="form-control" id="nom" disabled><?php echo $_SESSION['username'] ?></span><br>
+                    <span class="form-control" id="nom" disabled><?php echo $_SESSION['user'] ?></span><br>
                     <input type="text" id="FormPrix" name="prixTotal" class="form-control"><br> 
                     <input type="text" class="form-control" name="CIN" id="CIN" placeholder="Entrez votre CIN"> <br>
 

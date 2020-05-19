@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // si la methode de la formulaire es
     $count2 = $stmt2->rowCount();
 
     if ($count2 > 0) {
-        $_SESSION['username'] = $username; // SESSION USERNAME
+        $_SESSION['user'] = $username; // SESSION USERNAME
         $_SESSION['id'] = $row2['userID']; // SESSION ID
         header('location: products.php'); // REDIRECT VERS PAGE DASHBORD
         exit();
