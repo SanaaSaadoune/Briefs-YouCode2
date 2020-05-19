@@ -73,7 +73,7 @@ if (isset($_SESSION['username']) || isset($_SESSION['user'])) {
                 </div>
                 <div class="modal-body">
                     <span class="form-control" id="nom" disabled><?php echo $_SESSION['username'] ?></span><br>
-                    <input type="text" id="FormPrix" name="prixTotal" class="form-control" disabled><br> 
+                    <input type="text" id="FormPrix" name="prixTotal" class="form-control"><br> 
                     <input type="text" class="form-control" name="CIN" id="CIN" placeholder="Entrez votre CIN"> <br>
 
                     <select class="form-control" id="methodeP" name="methodeP">
@@ -124,7 +124,7 @@ if (isset($_SESSION['username']) || isset($_SESSION['user'])) {
 
         <?php
         } 
-          include $tplDirName . "footer.php";
+         include $tplDirName . "footer.php";
         } else {
             header('location: index.php');
         }
