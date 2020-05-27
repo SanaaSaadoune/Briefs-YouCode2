@@ -1,0 +1,66 @@
+.dashbord-table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashbord-table div {
+  width: 20%;
+  height: 180px;
+  margin: 10px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.dashbord-table div h5 {
+  height: 50%;
+}
+
+.dashbord-table div a {
+  height: 50%;
+}
+
+.dashbord-table div:nth-child(1) {
+  background-color: #eb3b5a;
+}
+
+.dashbord-table div:nth-child(2) {
+  background-color: #f7b731;
+}
+
+.dashbord-table div:nth-child(3) {
+  background-color: #4b6584;
+}
+
+.dashbord-table div:nth-child(4) {
+  background-color: #20bf6b;
+}
+
+.dashbord-table div h5,
+.dashbord-table div h1,
+.dashbord-table div a {
+  margin: 20px 5px;
+  color: white;
+}
+
+.dashbord-table div h1,
+.dashbord-table div a {
+  margin: 0 5px 15px;
+  font-size: 40px;
+  text-decoration: none;
+}
+/*# sourceMappingURL=Dashboard.css.map */

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?PowerDesigner signature="Workspace" version="15.1.0.2850"?>
+<!-- Veuillez ne pas modifier ce fichier -->
+
+<Workspace>
+	<Local Expanded="Yes">
+		<Model Expanded="Yes" ID="{58BC3446-405A-455F-B3FD-85B751AC8C6E}" Name="ModeleOrienteObjet_1" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="ModeleOrienteObjet_1.moo"/>
+		<Model Expanded="Yes" ID="{0A583F4A-85E6-4099-A4FF-2C844F4AD3A5}" Name="ModeleOrienteObjet_1" Selected="Yes" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="ModeleOrienteObjet_1.mpd"/>
+	</Local>
+	<BrowserModule Name="Référentiel"/>
+</Workspace>

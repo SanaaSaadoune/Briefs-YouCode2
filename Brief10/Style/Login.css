@@ -1,0 +1,143 @@
+.form {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.3);
+}
+
+.form *, .form *:before, .form *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.form .tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+
+.form .tab-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.form .tab-group li a {
+  display: block;
+  text-decoration: none;
+  padding: 15px;
+  background: rgba(160, 179, 176, 0.25);
+  color: #a0b3b0;
+  font-size: 20px;
+  float: left;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.form .tab-group li a:hover {
+  background: #e6b516;
+  color: #ffffff;
+}
+
+.form .tab-group .active a {
+  background: #EBBE2A;
+  color: #ffffff;
+}
+
+.form .tab-content > div:last-child {
+  display: none;
+}
+
+.form h1 {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 300;
+  margin: 0 0 40px;
+}
+
+.form input, .form textarea {
+  font-size: 22px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #a0b3b0;
+  color: #ffffff;
+  border-radius: 0;
+  -webkit-transition: border-color .25s ease, -webkit-box-shadow .25s ease;
+  transition: border-color .25s ease, -webkit-box-shadow .25s ease;
+  transition: border-color .25s ease, box-shadow .25s ease;
+  transition: border-color .25s ease, box-shadow .25s ease, -webkit-box-shadow .25s ease;
+}
+
+.form input:focus, .form textarea:focus {
+  outline: 0;
+  border-color: #EBBE2A;
+}
+
+.form textarea {
+  border: 2px solid #a0b3b0;
+  resize: vertical;
+}
+
+.form .field-wrap {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.form .top-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.form .top-row > div {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+
+.form .top-row > div:last-child {
+  margin: 0;
+}
+
+.form .button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #EBBE2A;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.form .button:hover, .form .button:focus {
+  background: #e6b516;
+}
+
+.form .button-block {
+  display: block;
+  width: 100%;
+}
+
+.form .forgot {
+  margin-top: -20px;
+  margin-bottom: 20px;
+  text-align: right;
+}
+/*# sourceMappingURL=Login.css.map */
